@@ -2,9 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 
-//    id("com.android.application")
-//    // Add the Google services Gradle plugin
-//    id("com.google.gms.google-services")
+   // id("com.android.application")
+    // Add the Google services Gradle plugin
+    id("com.google.gms.google-services")
+
+
 
 }
 
@@ -40,6 +42,7 @@ android {
     }
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
 }
 
@@ -50,12 +53,20 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+
+    // nav drwar
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
     // Import the Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
 
 
     // TODO: Add the dependencies for Firebase products you want to use
@@ -63,6 +74,26 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
 
 
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-auth")
+
+    // Declare the dependency for the Cloud Firestore library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-firestore")
+
+    // Add the dependency for the Cloud Storage library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-storage")
+
+    // ... other dependencies
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+   // annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1' // For Glide's annotation processor
+
+
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
+    //implementation(kotlin("script-runtime"))
+
+
 }

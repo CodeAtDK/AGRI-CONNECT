@@ -2,8 +2,19 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.AGRICONNECT" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/blue</item>
+         <item name="colorPrimaryVariant">@color/blue</item>
+         <item name="android:statusBarColor">@color/blue</item>
     </style>
 
     <style name="Theme.AGRICONNECT" parent="Base.Theme.AGRICONNECT" />
+
+    <style name="Theme.AGRICONNECT.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AGRICONNECT.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AGRICONNECT.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
