@@ -18,7 +18,7 @@ class Weather_Forecast : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
 
 //        _binding = FragmentGovernmentSchemesBinding.inflate(inflater, container, false)
@@ -39,6 +39,8 @@ class Weather_Forecast : Fragment() {
 
        // return inflater.inflate(R.layout.fragment_weather__forecast, container, false)
     }
+
+
 
 
 }

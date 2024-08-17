@@ -12,14 +12,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center"
-                android:paddingTop="40dp"
-                android:id="@+id/New_Technique_Description_Image"
-                android:src="@drawable/weather_logo" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,12 +19,25 @@
                 android:textAlignment="center"
                 android:id="@+id/New_Technique_Name"
                 android:textStyle="bold"
-                android:textSize="20dp"/>
+                android:textSize="30dp"
+                android:layout_marginTop="30dp"/>
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:paddingTop="20dp"
+                android:id="@+id/New_Technique_Description_Image"
+                android:src="@drawable/weather_logo" />
+
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New Technique Description"
+                android:text="Details"
+                android:textStyle="bold"
+                android:textSize="25dp"
                 android:textAlignment="center"
                 android:layout_marginTop="20dp"
                 android:id="@+id/New_Technique_Description"/>
@@ -42,8 +47,55 @@
                 android:layout_height="wrap_content"
                 android:text="New Technique Details"
                 android:textAlignment="center"
-                android:layout_marginTop="20dp"
                 android:id="@+id/New_Technique_Details"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Benfits"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="List of Benfiits"
+                android:textAlignment="center"
+                android:id="@+id/List_of_benfits"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Way of Implementation"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Implementation In Details"
+                android:textAlignment="center"
+                android:id="@+id/Implementation_In_Details"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Required Equipments"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name and link to the equipments"
+                android:textAlignment="center"
+                android:id="@+id/Required_Equipments"
+                android:layout_marginBottom="25dp"/>
+
+
+
 
 
         </LinearLayout>

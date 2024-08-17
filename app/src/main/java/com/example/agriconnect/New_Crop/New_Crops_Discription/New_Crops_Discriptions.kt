@@ -35,9 +35,6 @@ class New_Crops_Discriptions : Fragment() {
         MyViewModel.getData1().observe(viewLifecycleOwner) {
             binding.NewCropsName.setText(it)
         }
-        MyViewModel.getData2().observe(viewLifecycleOwner) {
-            binding.NewCropsDescription.setText(it)
-        }
         MyViewModel.getData3().observe(viewLifecycleOwner) {
 
             val storageReference = FirebaseStorage.getInstance().reference.child(it)
@@ -58,6 +55,13 @@ class New_Crops_Discriptions : Fragment() {
         }
         MyViewModel.getData4().observe(viewLifecycleOwner) {
             binding.NewCropsDetails.setText(it)
+        }
+        MyViewModel.getData5().observe(viewLifecycleOwner){
+            binding.HowToGrowTheCrop.setText(it)
+        }
+
+        MyViewModel.getData7().observe(viewLifecycleOwner){
+            binding.EquimentsRequirement.setText(it)
         }
 
 

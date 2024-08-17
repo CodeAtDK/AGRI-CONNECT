@@ -27,7 +27,7 @@
                 android:layout_width="258dp"
                 android:layout_height="209dp"
                 android:layout_gravity="center_horizontal"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:src="@drawable/weather_logo" />
 
             <TextView
@@ -41,7 +41,8 @@
                 android:text="Hi I am DK"
                 android:textAlignment="center"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"/>
 
         </LinearLayout>
 

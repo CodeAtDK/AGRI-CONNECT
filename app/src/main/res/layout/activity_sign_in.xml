@@ -13,6 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign In"
+        android:textSize="25dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.474"
@@ -24,29 +26,28 @@
         android:id="@+id/Sign_In_email_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint=" Email id"
-
-        android:inputType="text"
-        android:maxLines="1"
-        android:maxLength="30"
         android:drawableStart="@drawable/icons_email"
+        android:hint=" Email id"
+        android:inputType="text"
+        android:maxLength="30"
+        android:maxLines="1"
         app:layout_constraintBottom_toTopOf="@+id/Sign_In_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.915" />
+        app:layout_constraintVertical_bias="0.866" />
 
     <EditText
         android:id="@+id/Sign_In_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="48dp"
+        android:drawableStart="@drawable/icons_passwords"
         android:hint=" password"
         android:inputType="text"
-        android:maxLines="1"
         android:maxLength="30"
-        android:drawableStart="@drawable/icons_passwords"
+        android:maxLines="1"
         app:layout_constraintBottom_toTopOf="@+id/Sign_Up_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -57,17 +58,18 @@
         android:id="@+id/Sign_Up_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="88dp"
         android:hint="Sign Up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/logojiit"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="87dp" />
+        android:layout_width="400dp"
+        android:layout_height="151dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/applogo1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="5dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

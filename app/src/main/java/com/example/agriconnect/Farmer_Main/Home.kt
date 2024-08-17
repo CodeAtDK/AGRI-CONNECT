@@ -1,10 +1,15 @@
 package com.example.agriconnect.Farmer_Main
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.fragment.app.commit
 import com.example.agriconnect.Crop_Suggestion.Crop_Suggestion
 import com.example.agriconnect.Farmer_Market.Farmer_Shop
@@ -14,12 +19,33 @@ import com.example.agriconnect.New_Techniques.New_Farming_Teachniques
 import com.example.agriconnect.R
 import com.example.agriconnect.Weather_Forecast.Weather_Forecast
 import com.example.agriconnect.databinding.FragmentHomeBinding
+import kotlin.system.exitProcess
 
 
-class Home : Fragment() {
+
+class Home : Fragment(){
+    interface OnAppExitListener {
+
+        fun onAppExit()
+
+    }
 
     private  var _binding: FragmentHomeBinding?= null
     private val binding get() = _binding!!
+
+    private var exitlistener: OnAppExitListener? = null
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is OnAppExitListener) {
+            exitlistener = context
+        } else {
+            throw RuntimeException("$context must implement OnAppExitListener")
+        }
+    }
+    override fun onDetach() {
+        super.onDetach()
+        exitlistener = null
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +66,7 @@ class Home : Fragment() {
                     Farmer_Shop::class.java,
                     null
                 ) // Replace with your FragmentContainerView's ID and the new Fragment class
-                addToBackStack(null)
+                addToBackStack("Tag1")
 
             }
         }
@@ -105,8 +131,51 @@ class Home : Fragment() {
             }
         }
 
+        binding.StopExit.setOnClickListener(){
+
+            binding.cardViewExitapp.setVisibility(INVISIBLE)
+        }
+
+        binding.ButtonExit.setOnClickListener(){
+
+            exitlistener?.onAppExit()
+
+
+        }
+
         return binding.root
 
 
     }
+
+//    override fun onBackPressed(){
+//
+//    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(this,object : OnBackPressedCallback(true){
+
+            override fun handleOnBackPressed() {
+
+                binding.cardViewExitapp.setVisibility(VISIBLE)
+
+            }
+        })
+
+    }
+
+
+
+
+
+
 }

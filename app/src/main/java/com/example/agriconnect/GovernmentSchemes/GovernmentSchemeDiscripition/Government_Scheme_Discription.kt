@@ -1,10 +1,15 @@
 package com.example.agriconnect.GovernmentSchemes.GovernmentSchemeDiscripition
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.agriconnect.GovernmentSchemes.Government_Schemes_View_Model
 import com.example.agriconnect.databinding.FragmentGovernmentSchemeDiscriptionBinding
@@ -21,7 +26,7 @@ class Government_Scheme_Discription : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_government__scheme__discription, container, false)
         _binding = FragmentGovernmentSchemeDiscriptionBinding.inflate(inflater, container, false)
@@ -34,17 +39,36 @@ class Government_Scheme_Discription : Fragment() {
         MyViewModel.getData2().observe(viewLifecycleOwner){
             binding.GovernmentSchemeDiscriptionDiscription.setText(it)
         }
+        MyViewModel.getData3().observe(viewLifecycleOwner){
+            binding.GovernmentSchemeBenefits.setText(it)
+        }
+        MyViewModel.getData4().observe(viewLifecycleOwner) {
+            binding.GovenmentSchemeEligibility.setText(it)
+        }
+        MyViewModel.getData5().observe(viewLifecycleOwner){
+            binding.GovernmentSchemeDocumentsRequired.setText(it)
+        }
+        MyViewModel.getData6().observe(viewLifecycleOwner){
+            binding.link.setText(it)
 
-        binding.GovernmentSchemeDiscriptionDetail.setText("Pradhan Mantri Mudra Yojana (PMMY) is a flagship scheme of Government of India. The scheme facilitates micro credit/Loan up to Rs. 10 lakhs to income generating micro enterprises engaged in the non farm sector in manufacturing, trading or service sectors including activities allied to agriculture such as poultry, dairy, beekeeping, etc. The Scheme provides financial assistance extended by Member Lending Institutions to the non-corporate, non-farm sector income generating activities of micro and small entities.\n" +
-                "\n" +
-                "These micro and small entities comprise of millions of proprietorship / partnership firms running as small manufacturing units, service sector units, shopkeepers, fruits / vegetable vendors, truck operators, food-service units, repair shops, machine operators, small industries, artisans, food processors and others. \n" +
-                "\n" +
-                "The loans under Pradhan Mantri Mudra Yojana can be availed through eligible Member Lending Institutions (MLIs),  which include:\n" +
-                "Public Sector BanksPrivate Sector BanksState operated cooperative banksRural banks from regional sectorMicro Finance Institution (MFI)Non-Banking Finance Company (NBFC)Small Finance Banks (SFBs) Other financial intermediary approved by Mudra Ltd. as member financial institutions\n" +
-                "Interest rate\n" +
-                "The interest rates are declared by Member  Lending Institutions from time to time as per Reserve Bank of India guidelines based on which applicable interest rate is  determined.\n" +
-                "\n" +
-                "Upfront fee/Processing charges\n")
+        }
+
+
+
+
+
+            binding.GovernmentSchemeApplyNowButton.setOnClickListener {
+
+//            val url = MyViewModel.getData6().value
+                val url = binding.link.text.toString()
+                Toast.makeText(requireContext(), url, Toast.LENGTH_SHORT).show()
+                Log.d("URL", url.toString())
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(url)
+                startActivity(intent)
+            }
+
+
 
 
 

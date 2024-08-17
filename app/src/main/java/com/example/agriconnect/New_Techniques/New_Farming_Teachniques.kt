@@ -28,9 +28,12 @@ class New_Farming_Teachniques : Fragment() {
     private lateinit var dataList1: ArrayList<New_Techniques_Data_Class>
 
     lateinit var New_Techniques_Name: Array<String>
-    lateinit var New_Techniques_Discription: Array<String>
     lateinit var New_Techniques_Image: Array<String>
     lateinit var New_Techniques_Detail: Array<String>
+    lateinit var New_Techniques_Benfits: Array<String>
+    lateinit var New_Techniques_Ways_of_implementation: Array<String>
+    lateinit var New_Techniques_Equipments: Array<String>
+    lateinit var Equipments_Link : Array<String>
 
     private lateinit var New_Techniques_View_Model1: New_Techniques_View_Model
 
@@ -87,26 +90,29 @@ class New_Farming_Teachniques : Fragment() {
                     if (data != null) {
                         Log.d("TAG", "DocumentSnapshot data: ${data.New_Techniques_Name}")
 
-                        New_Techniques_Name =
-                            New_Techniques_Name + data.New_Techniques_Name.toString()
-                        New_Techniques_Discription =
-                            New_Techniques_Discription + data.New_Techniques_Discription.toString()
-                        New_Techniques_Image =
-                            New_Techniques_Image + data.New_Techniques_Image_Uri.toString()
+                        New_Techniques_Image = New_Techniques_Image + data.New_Techniques_Image_Uri.toString()
+                        New_Techniques_Name = New_Techniques_Name + data.New_Techniques_Name.toString()
+                        New_Techniques_Benfits = New_Techniques_Benfits + data.ListofBenfits.toString()
+                        New_Techniques_Ways_of_implementation = New_Techniques_Ways_of_implementation + data.WayInDetail.toString()
+                        New_Techniques_Equipments = New_Techniques_Equipments + data.RequiredEquipments.toString()
+                        Equipments_Link = Equipments_Link + data.EquipmentsLink.toString()
 
                         Log.d("TAG", "DocumentSnapshot data uri: ${data.New_Techniques_Image_Uri}")
                         Log.d("TAG", "DocumentSnapshot data name: ${data.New_Techniques_Name}")
                         Log.d(
                             "TAG",
-                            "DocumentSnapshot data discri: ${data.New_Techniques_Discription}"
+                            "DocumentSnapshot data discri: ${data.ListofBenfits}"
                         )
                         Log.d("TAG", "DocumentSnapshot data deta: ${data.New_Techniques_Detail}")
 
                         val dataclass = New_Techniques_Data_Class(
                             data.New_Techniques_Image_Uri,
                             data.New_Techniques_Name,
-                            data.New_Techniques_Discription,
-                            data.New_Techniques_Detail
+                            data.New_Techniques_Detail,
+                            data.ListofBenfits,
+                            data.WayInDetail,
+                            data.RequiredEquipments,
+                            data.EquipmentsLink,
                         )
                         dataList1.add(dataclass)
 
@@ -161,16 +167,24 @@ class New_Farming_Teachniques : Fragment() {
         New_Techniques_Image = arrayOf(
 
         )
-        New_Techniques_Discription = arrayOf(
+        New_Techniques_Detail = arrayOf(
 
         )
-        New_Techniques_Detail = arrayOf(
+        New_Techniques_Benfits = arrayOf(
+
+        )
+        New_Techniques_Ways_of_implementation = arrayOf(
+
+        )
+        New_Techniques_Equipments = arrayOf(
+
+        )
+        Equipments_Link = arrayOf(
 
         )
         for(i in New_Techniques_Name.indices){
 
-            val dataclass1 = New_Techniques_Data_Class(New_Techniques_Image[i],New_Techniques_Name[i]
-                ,New_Techniques_Discription[i],New_Techniques_Detail[i])
+            val dataclass1 = New_Techniques_Data_Class(New_Techniques_Image[i],New_Techniques_Name[i],New_Techniques_Detail[i],New_Techniques_Benfits[i],New_Techniques_Ways_of_implementation[i],New_Techniques_Equipments[i],Equipments_Link[i])
             dataList1.add(dataclass1)
         }
         }
@@ -201,8 +215,11 @@ class New_Farming_Teachniques : Fragment() {
 
                 New_Techniques_View_Model1.setData3(datalist1[position].New_Techniques_Image_Uri)
                 New_Techniques_View_Model1.setData1(datalist1[position].New_Techniques_Name)
-                New_Techniques_View_Model1.setData2(datalist1[position].New_Techniques_Discription)
                 New_Techniques_View_Model1.setData4(datalist1[position].New_Techniques_Detail)
+                    New_Techniques_View_Model1.setData5(datalist1[position].ListofBenfits)
+                    New_Techniques_View_Model1.setData6(datalist1[position].WayInDetail)
+                    New_Techniques_View_Model1.setData7(datalist1[position].RequiredEquipments)
+                    New_Techniques_View_Model1.setData8(datalist1[position].EquipmentsLink)
 
                     parentFragmentManager.commit {
                         setReorderingAllowed(true)

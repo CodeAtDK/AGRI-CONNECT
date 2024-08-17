@@ -103,7 +103,7 @@ class SignUp : AppCompatActivity()  {
             phone,
         )
 //
-        db.collection("com.example.agriconnect.Basic.userinformation").add(user)
+        db.collection("userinformation").document("$email1").set(user)
     }
 
     override fun onStart() {

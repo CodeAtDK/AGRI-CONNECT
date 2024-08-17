@@ -31,13 +31,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/Seeds_Farmer">
+            android:id="@+id/EquipmentMarket">
 
             <ImageView
                 android:layout_width="300dp"
                 android:layout_height="200dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
+                android:id="@+id/hi"
                 android:src="@drawable/farmer_market_logo" />
 
             <TextView
@@ -46,6 +47,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="14dp"
                 android:text="Equpments"
+
                 android:paddingBottom="20dp"
                 android:textAlignment="center" />
         </RelativeLayout>
@@ -62,7 +64,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/Equpment_Farmers">
+            android:id="@+id/Seeds_Farmer">
 
             <ImageView
                 android:layout_width="300dp"
@@ -77,6 +79,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="14dp"
                 android:text="Seeds"
+
                 android:paddingBottom="20dp"
                 android:textAlignment="center" />
         </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.agriconnect.New_Crop
 
+import android.media.audiofx.DynamicsProcessing.Eq
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.agriconnect.GovernmentSchemes.AdapterforGovernmentSchemes
@@ -27,9 +29,10 @@ class New_farming_Crops : Fragment() {
     private lateinit var dataList: ArrayList<New_Farming_Crop_Data_Class>
 
     lateinit var New_Crop_name: Array<String>
-    lateinit var New_Crop_Discription: Array<String>
     lateinit var New_Crop_Image: Array<String>
     lateinit var New_Crop_Detail: Array<String>
+    lateinit var Intructions_to_Grow_The_Crop : Array<String>
+    lateinit var Equiments_Required : Array<String>
 
     private lateinit var New_Crops_View_Model1 : New_Crops_View_Model
 
@@ -59,7 +62,7 @@ class New_farming_Crops : Fragment() {
 
         count()
 
-        val layoutManager = LinearLayoutManager(context)
+        val layoutManager = GridLayoutManager(this@New_farming_Crops.requireActivity(), 1)
         recyclerView = view.findViewById(R.id.recyclerView_new_crop_and_techniques)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
@@ -88,23 +91,25 @@ class New_farming_Crops : Fragment() {
                         Log.d("TAG", "DocumentSnapshot data: ${data.New_Crop_Name}")
 
                         New_Crop_name = New_Crop_name + data.New_Crop_Name.toString()
-                        New_Crop_Discription =
-                            New_Crop_Discription + data.New_Crop_Discription.toString()
                         New_Crop_Image = New_Crop_Image + data.New_Crop_Image_Uri.toString()
+                        New_Crop_Detail = New_Crop_Detail + data.New_Crop_Detail.toString()
+                        Intructions_to_Grow_The_Crop = Intructions_to_Grow_The_Crop + data.Intruction_to_Grow_The_Crop.toString()
+                        Equiments_Required = Equiments_Required + data.Equiments_Required.toString()
 
                         Log.d("TAG", "DocumentSnapshot data uri: ${data.New_Crop_Image_Uri}")
                         Log.d("TAG", "DocumentSnapshot data name: ${data.New_Crop_Name}")
                         Log.d(
                             "TAG",
-                            "DocumentSnapshot data discri: ${data.New_Crop_Discription}"
+                            "DocumentSnapshot data discri: ${data.Intruction_to_Grow_The_Crop}"
                         )
                         Log.d("TAG", "DocumentSnapshot data deta: ${data.New_Crop_Detail}")
 
                         val dataclass = New_Farming_Crop_Data_Class(
                             data.New_Crop_Image_Uri,
                             data.New_Crop_Name,
-                            data.New_Crop_Discription,
-                            data.New_Crop_Detail
+                            data.New_Crop_Detail,
+                            data.Intruction_to_Grow_The_Crop,
+                            data.Equiments_Required,
                         )
                         dataList.add(dataclass)
 
@@ -122,9 +127,6 @@ class New_farming_Crops : Fragment() {
             }
             a = a + 1
 
-            if (a == 7) {
-                //add1(dataList)
-            }
         }
 
     }
@@ -145,19 +147,21 @@ class New_farming_Crops : Fragment() {
 
 
         )
-        New_Crop_Discription = arrayOf(
-
-
-
-        )
         New_Crop_Detail = arrayOf(
 
 
         )
+        Intructions_to_Grow_The_Crop = arrayOf(
+
+        )
+
+        Equiments_Required = arrayOf(
+
+        )
+
         for(i in New_Crop_name.indices){
 
-            val dataclass = New_Farming_Crop_Data_Class(New_Crop_Image[i],New_Crop_name[i]
-                ,New_Crop_Discription[i],New_Crop_Detail[i])
+            val dataclass = New_Farming_Crop_Data_Class(New_Crop_Image[i],New_Crop_name[i],New_Crop_Detail[i],Intructions_to_Grow_The_Crop[i],Equiments_Required[i])
             dataList.add(dataclass)
         }
     }
@@ -185,8 +189,10 @@ class New_farming_Crops : Fragment() {
 
                 New_Crops_View_Model1.setData3(datalist1[position].New_Crop_Image_Uri)
                 New_Crops_View_Model1.setData1(datalist1[position].New_Crop_Name)
-                New_Crops_View_Model1.setData2(datalist1[position].New_Crop_Discription)
                 New_Crops_View_Model1.setData4(datalist1[position].New_Crop_Detail)
+                New_Crops_View_Model1.setData5(datalist1[position].Intruction_to_Grow_The_Crop)
+
+                New_Crops_View_Model1.setData7(datalist1[position].Equiments_Required)
 
                 parentFragmentManager.commit {
                     setReorderingAllowed(true)

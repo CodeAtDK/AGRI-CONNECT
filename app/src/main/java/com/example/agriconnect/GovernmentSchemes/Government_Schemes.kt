@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.agriconnect.GovernmentSchemes.GovernmentSchemeDiscripition.Government_Scheme_Discription
 import com.example.agriconnect.R
 import com.example.agriconnect.databinding.FragmentGovernmentSchemesBinding
+import com.google.android.material.color.utilities.Scheme
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.AggregateQuery
 import com.google.firebase.firestore.AggregateSource
@@ -30,6 +31,10 @@ class Government_Schemes : Fragment() {
 
     lateinit var schemename: Array<String>
     lateinit var schemeDiscription: Array<String>
+    lateinit var schemesBenefits: Array<String>
+    lateinit var schemesEligibility: Array<String>
+    lateinit var DocumentsRequired: Array<String>
+    lateinit var SchemeLink: Array<String>
     //lateinit var Img: Array<Int>
 
 
@@ -131,6 +136,21 @@ class Government_Schemes : Fragment() {
         schemeDiscription = arrayOf(
 
         )
+        schemesBenefits = arrayOf(
+
+
+        )
+        schemesEligibility = arrayOf(
+
+
+        )
+        DocumentsRequired = arrayOf(
+
+
+        )
+        SchemeLink = arrayOf(
+
+        )
 //
 //
 //
@@ -160,8 +180,12 @@ class Government_Schemes : Fragment() {
 
                         schemename = schemename + data.SchemesName.toString()
                         schemeDiscription = schemeDiscription + data.SchemesDiscription.toString()
+                        schemesBenefits = schemesBenefits + data.SchemesBenefits.toString()
+                        schemesEligibility = schemesEligibility + data.SchemesEligibility.toString()
+                        DocumentsRequired = DocumentsRequired + data.SchemesDocumentRequired.toString()
+                        SchemeLink = SchemeLink + data.SchemesLink.toString()
 
-                        val dataclass = GovernmentSchemes(data.SchemesName,data.SchemesDiscription)
+                        val dataclass = GovernmentSchemes(data.SchemesName,data.SchemesDiscription,data.SchemesBenefits,data.SchemesEligibility,data.SchemesDocumentRequired,data.SchemesLink)
                         dataList.add(dataclass)
 
                         // add1(data.SchemesName,data.SchemesDiscription)
@@ -225,6 +249,10 @@ class Government_Schemes : Fragment() {
 
                 Government_Schemes_View_Model1.setData1(dataList[position].SchemesName)
                 Government_Schemes_View_Model1.setData2(dataList[position].SchemesDiscription)
+                Government_Schemes_View_Model1.setData3(dataList[position].SchemesBenefits)
+                Government_Schemes_View_Model1.setData4(dataList[position].SchemesEligibility)
+                Government_Schemes_View_Model1.setData5(dataList[position].SchemesDocumentRequired)
+                Government_Schemes_View_Model1.setData6(dataList[position].SchemesLink)
 
                 parentFragmentManager.commit {
                     setReorderingAllowed(true)

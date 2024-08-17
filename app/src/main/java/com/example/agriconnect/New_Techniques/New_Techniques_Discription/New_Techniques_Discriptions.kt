@@ -38,9 +38,7 @@ class New_Techniques_Discriptions : Fragment() {
         MyViewModel_Techniques.getData1().observe(viewLifecycleOwner) {
             binding.NewTechniqueName.setText(it)
         }
-        MyViewModel_Techniques.getData2().observe(viewLifecycleOwner) {
-            binding.NewTechniqueDetails.setText(it)
-        }
+
         MyViewModel_Techniques.getData3().observe(viewLifecycleOwner) {
 
             val storageReference = FirebaseStorage.getInstance().reference.child(it)
@@ -61,6 +59,15 @@ class New_Techniques_Discriptions : Fragment() {
         }
         MyViewModel_Techniques.getData4().observe(viewLifecycleOwner) {
             binding.NewTechniqueDetails.setText(it)
+        }
+        MyViewModel_Techniques.getData5().observe(viewLifecycleOwner){
+            binding.ListOfBenfits.setText(it)
+        }
+        MyViewModel_Techniques.getData6().observe(viewLifecycleOwner){
+            binding.ImplementationInDetails.setText(it)
+        }
+        MyViewModel_Techniques.getData7().observe(viewLifecycleOwner){
+            binding.RequiredEquipments.setText(it)
         }
 
 
