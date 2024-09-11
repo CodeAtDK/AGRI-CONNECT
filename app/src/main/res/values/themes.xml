@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.AGRICONNECT" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/blue</item>
-         <item name="colorPrimaryVariant">@color/blue</item>
-         <item name="android:statusBarColor">@color/blue</item>
+         <item name="colorPrimary">#0CCEE7</item>
+         <item name="colorPrimaryVariant">#0CCEE7</item>
+         <item name="android:statusBarColor">#0CCEE7</item>
     </style>
 
     <style name="Theme.AGRICONNECT" parent="Base.Theme.AGRICONNECT" />

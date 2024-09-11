@@ -32,19 +32,20 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New Technique Description"
+                android:text="Product_Market_Price"
                 android:textAlignment="center"
                 android:layout_marginTop="20dp"
-                android:id="@+id/Product_Market_Description"/>
+                android:id="@+id/Product_Price" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Product_Market_Price"
+                android:text="New Technique Description"
                 android:textAlignment="center"
                 android:layout_marginTop="20dp"
-                android:id="@+id/Product_Price"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp"
+                android:id="@+id/Product_Market_Description"/>
+
 
             <Button
                 android:layout_width="match_parent"
@@ -59,14 +60,16 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:gravity="center_horizontal"
-                android:text="Add Cart" />
+                android:text="Add Cart"
+                android:id="@+id/ADD_to_cart"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:gravity="center_horizontal"
-                android:text="Rent" />
+                android:text="Rent"
+                android:id="@+id/Rent_The_Product"/>
 
 
 

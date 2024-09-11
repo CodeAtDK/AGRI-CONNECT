@@ -1,5 +1,6 @@
 package com.example.agriconnect.Farmer_Market.MarketPlace
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -159,7 +160,9 @@ class Market_Place_Layout : Fragment() {
                             data.product_img_Id_Url,
                             data.product_name,
                             data.product_price,
+                            data.product_quantity,
                             data.product_Discreeption,
+                            data.product_id,
                         )
                         dataList_Products.add(dataclass)
 
@@ -215,7 +218,7 @@ class Market_Place_Layout : Fragment() {
         for(i in product_Name.indices){
 
             val dataclass = FarmerProduct(Product_Image[i],product_Name[i]
-                , Product_Price[i],Product_Discription[i])
+                , Product_Price[i],null,Product_Discription[i],null)
             dataList_Products.add(dataclass)
 
         }

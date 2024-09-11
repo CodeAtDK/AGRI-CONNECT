@@ -10,6 +10,7 @@ import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.agriconnect.Buying_Process.Address_Confirmation_In_Buying_Process
 import com.example.agriconnect.Farmer_Market.Farmer_Shop_ViewModel
 import com.example.agriconnect.Farmer_Market.MarketPlace.Market_Place_Layout
 import com.example.agriconnect.R
@@ -70,13 +71,22 @@ class Product_Details : Fragment() {
                 setReorderingAllowed(true)
                 replace(
                     R.id.fragment_container,
-                    Market_Place_Layout::class.java,
+                    Address_Confirmation_In_Buying_Process::class.java,
                     null
                 ) // Replace with your FragmentContainerView's ID and the new Fragment class
                 addToBackStack(null)
 
             }
 
+        }
+
+        binding.RentTheProduct.setOnClickListener(){
+
+            Toast.makeText(this@Product_Details.requireContext(), "Rent The Product Is Comming Soon", Toast.LENGTH_LONG).show()
+        }
+        binding.ADDToCart.setOnClickListener(){
+
+            Toast.makeText(this@Product_Details.requireContext(),  "Cart Is Comming Soon", Toast.LENGTH_LONG).show()
         }
 
         return binding.root

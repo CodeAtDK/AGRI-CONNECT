@@ -7,7 +7,8 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Basic.MainActivity">
+        tools:context=".Basic.MainActivity"
+        android:background="@drawable/farmerbackground">
 
         <TextView
             android:id="@+id/textView"
@@ -16,33 +17,35 @@
             android:text="AGRI CONNECT"
             android:textSize="30dp"
             android:textStyle="bold"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.153" />
+            app:layout_constraintVertical_bias="0.025" />
 
         <Button
             android:id="@+id/buttonSignIn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_width="155dp"
+            android:layout_height="104dp"
+            android:layout_marginTop="50dp"
             android:text="Sign In"
+            android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonSignUpp"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="0.188"
             tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/buttonSignUpp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="84dp"
+            android:layout_width="155dp"
+            android:layout_height="104dp"
+            android:layout_marginTop="64dp"
             android:text="Sign Up"
+            android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -52,14 +55,15 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="176dp"
-            android:layout_marginTop="72dp"
-            android:background="@drawable/applogo1"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/applogo11"
+            android:backgroundTint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:ignore="MissingConstraints" />
-        <!--        tools:srcCompat="@tools:sample/avatars" />-->
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

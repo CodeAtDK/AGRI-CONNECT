@@ -22,10 +22,13 @@ import kotlin.system.exitProcess
 
 class FarmerMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,Home.OnAppExitListener {
 
+    // initialize to drawerlayout
     private lateinit var drawerLayout: DrawerLayout
+    // initialize to authentication
     private lateinit var auth: FirebaseAuth
 
 
+    // this will close the app
     override fun onAppExit(){
         finishAffinity()
         exitProcess(0)
@@ -41,6 +44,7 @@ class FarmerMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         // ...
         // Initialize Firebase Auth
         auth = Firebase.auth
+
 
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
 //        setSupportActionBar(toolbar)

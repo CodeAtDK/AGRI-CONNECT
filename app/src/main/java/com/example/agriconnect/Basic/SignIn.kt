@@ -20,18 +20,22 @@ import com.google.firebase.auth.auth
 
 class SignIn : AppCompatActivity() {
 
+    // Data Binding
     lateinit var binding: ActivitySignInBinding
+    // Firebase authentication
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        // This will bind the file with activity_sign_in
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in)
         // ...
         // Initialize Firebase Auth
         auth = Firebase.auth
 
+        // on click checkUser will call
         binding.SignUpButton.setOnClickListener(){
 
             checkUser()
@@ -41,6 +45,8 @@ class SignIn : AppCompatActivity() {
 
     }
 
+    // Here email and password will be taken form the edittextview and store as email and password then this will send to firebase to authenticate the user is real of not.
+    // Then it will call the update UI function and give parameter as activity name
     private fun checkUser() {
 
         val email = binding.SignInEmailId.text.toString()
@@ -66,6 +72,9 @@ class SignIn : AppCompatActivity() {
             }
     }
 
+
+    // This function will update the UI as parameter passed form the checkUser
+
     private fun updateUI(user: FirebaseUser?) {
 
         if(user != null){
@@ -79,6 +88,7 @@ class SignIn : AppCompatActivity() {
 
     }
 
+    // this will set the value of current user
     override fun onStart() {
 
         super.onStart()

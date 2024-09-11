@@ -20,15 +20,20 @@ import com.google.firebase.firestore.firestore
 
 class SignUp : AppCompatActivity()  {
 
+    // Data Binding
     lateinit var binding: ActivitySignUpBinding
+
+    // Firebase Authentication
     private lateinit var auth: FirebaseAuth
 
+    // Firebase storage
     private val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        // This will bind the class to activity_sign_up
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
 
         // ...
@@ -41,6 +46,8 @@ class SignUp : AppCompatActivity()  {
 
 
 
+
+        // Will call createUser
         binding.SignId.setOnClickListener() {
 
             createUser();
@@ -48,6 +55,7 @@ class SignUp : AppCompatActivity()  {
         }
     }
 
+    // will take email and password form user and then check in database it exist or not if not then create a new user
     private fun createUser() {
 
         val email = binding.signUpEmailId.text.toString()
@@ -74,6 +82,8 @@ class SignUp : AppCompatActivity()  {
             }
     }
 
+    // after creating new user it will update the UI
+
     private fun updateUI(user: FirebaseUser?) {
 
 
@@ -88,6 +98,7 @@ class SignUp : AppCompatActivity()  {
 
     }
 
+    // This will add the data to firebase firestore database of user Detail
     private fun adddata() {
 
 
@@ -106,6 +117,7 @@ class SignUp : AppCompatActivity()  {
         db.collection("userinformation").document("$email1").set(user)
     }
 
+    // On start it will initialize the value of auth
     override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
