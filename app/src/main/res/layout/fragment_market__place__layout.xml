@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Farmer_Market.MarketPlace.Market_Place_Layout">
+    tools:context=".Farmer_Market.MarketPlace.Market_Place_Layout"
+    android:background="@drawable/blur_background">
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Market Type"
-        android:id="@+id/Market_Id"/>
+        android:id="@+id/Market_Id"
+        android:visibility="invisible"/>
 
 
     <androidx.recyclerview.widget.RecyclerView

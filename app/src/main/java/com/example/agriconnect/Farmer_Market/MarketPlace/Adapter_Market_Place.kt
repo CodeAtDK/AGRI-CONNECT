@@ -51,6 +51,7 @@ class Adapter_Market_Place (private val dataList_for_Market_Place : ArrayList<Fa
             val imageUriString = uri.toString()
 
             holder.productname.text = currentItem.product_name
+            holder.productPrice.text = "$ " + currentItem.product_price.toString()
 
             // Convert the URL string to a Uri object
             val imageUri = Uri.parse(imageUriString)

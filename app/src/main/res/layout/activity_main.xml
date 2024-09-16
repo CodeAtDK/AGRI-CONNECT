@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Basic.MainActivity"
-        android:background="@drawable/farmerbackground">
-
+        android:background="@drawable/farmer_background"
+        >
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -36,26 +39,29 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonSignUpp"
-            app:layout_constraintVertical_bias="0.188"
+            app:layout_constraintVertical_bias="0.39"
             tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/buttonSignUpp"
             android:layout_width="155dp"
             android:layout_height="104dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="28dp"
             android:text="Sign Up"
             android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.24000001"
             tools:ignore="MissingConstraints" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="176dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/applogo11"
             android:backgroundTint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +69,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:ignore="MissingConstraints" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/login"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

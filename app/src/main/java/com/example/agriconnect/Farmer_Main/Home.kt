@@ -8,6 +8,7 @@ import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.fragment.app.commit
@@ -71,28 +72,30 @@ class Home : Fragment(){
             }
         }
         binding.weatherForecastCard.setOnClickListener() {
-            parentFragmentManager.commit {
-                setReorderingAllowed(true)
-                replace(
-                    R.id.fragment_container,
-                    Weather_Forecast::class.java,
-                    null
-                ) // Replace with your FragmentContainerView's ID and the new Fragment class
-                addToBackStack(null)
-
-            }
+//            parentFragmentManager.commit {
+//                setReorderingAllowed(true)
+//                replace(
+//                    R.id.fragment_container,
+//                    Weather_Forecast::class.java,
+//                    null
+//                ) // Replace with your FragmentContainerView's ID and the new Fragment class
+//                addToBackStack(null)
+//
+//            }
+            Toast.makeText(this@Home.requireActivity(),"The Weather Forecasting will be avilable Soon....",Toast.LENGTH_SHORT).show()
         }
         binding.cropSuggestionCard.setOnClickListener() {
-            parentFragmentManager.commit {
-                setReorderingAllowed(true)
-                replace(
-                    R.id.fragment_container,
-                    Crop_Suggestion::class.java,
-                    null
-                ) // Replace with your FragmentContainerView's ID and the new Fragment class
-                addToBackStack(null)
-
-            }
+//            parentFragmentManager.commit {
+//                setReorderingAllowed(true)
+//                replace(
+//                    R.id.fragment_container,
+//                    Crop_Suggestion::class.java,
+//                    null
+//                ) // Replace with your FragmentContainerView's ID and the new Fragment class
+//                addToBackStack(null)
+//
+//            }
+            Toast.makeText(this@Home.requireActivity(),"Crop Requiredments will be available Soon....",Toast.LENGTH_SHORT).show()
         }
         binding.governmentSchemesCard.setOnClickListener() {
             parentFragmentManager.commit {

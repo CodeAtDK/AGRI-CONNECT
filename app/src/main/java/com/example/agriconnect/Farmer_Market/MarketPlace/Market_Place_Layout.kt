@@ -147,6 +147,7 @@ class Market_Place_Layout : Fragment() {
                         Product_Discription = Product_Discription + data.product_Discreeption.toString()
                         Product_Image = Product_Image + data.product_img_Id_Url.toString()
 
+
                         Log.d("TAG", "DocumentSnapshot data uri: ${data.product_img_Id_Url}")
 
                         Log.d("TAG", "DocumentSnapshot data name: ${data.product_name}")

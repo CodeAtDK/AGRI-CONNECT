@@ -183,29 +183,25 @@ class MainActivity : AppCompatActivity() {
 //                null,
 //            )
 
-            val city = FarmerProduct(
-                "Farmer_Products/JhonDeereW-70.avif",
-                "W-70 Synchrosmart combine harvester Powerpro",
-                2750000,
-                "10",
-                "John Deere W-70 Synchrosmart Combine Harvester Powerpro is a powerful, yet light weight 100HP compact harvester! It is swift and can work efficiently in wet and small fields. Due to its ergonomic dimensions it can easily enter where other harvesters cannot.\n" +
-                        "Compact design helps in crossing through narrow lanes\n" +
-                        "Saves fuel due to light wight and offers high productivity\n" +
-                        "Suitable for harvesting of  Paddy, Wheat, Corn, Soyabean, Mustard, chickpea, Millets, Pulses, Sunflower,Safflower, Flaxseed",
-                123,
-
-            )
-            db.collection("Equipments MarketFarmer_Market").document("1").set(city)
-            db.collection("Equipments MarketFarmer_Market").document("2").set(city)
-            Toast.makeText(this, "Data Added", Toast.LENGTH_SHORT).show()
-
-//            val city1 = FarmerProduct(
-//                "New_Crops/Screenshot 2024-03-13 234256.png",
-//                "Pearl Farming2" ,
-//                10580,
-//                "All farmers do farming, but nowadays Pearl farming trend is increasing rapidly. Less labor and higher profits are proving to be a bargain. Earlier, training for Pearl farming was given at Central Institute of Fresh Water Aquaculture, Bhubaneswar (Odisha), but now many other institutes are providing the training in the state. You can do a simple google search based on your location and chances are there will be an institute for Pearl farming near you.\n"
-//                        )
-//            db.collection("Equipments MarketFarmer_Market").document("2").set(city1)
+//            val city = FarmerProduct(
+//                "Farmer_Products/JhonDeereW-70.avif",
+//                "W-70 Synchrosmart combine harvester Powerpro",
+//                2750000,
+//                "10",
+//                "John Deere W-70 Synchrosmart Combine Harvester Powerpro is a powerful, yet light weight 100HP compact harvester! It is swift and can work efficiently in wet and small fields. Due to its ergonomic dimensions it can easily enter where other harvesters cannot.\n" +
+//                        "Compact design helps in crossing through narrow lanes\n" +
+//                        "Saves fuel due to light wight and offers high productivity\n" +
+//                        "Suitable for harvesting of  Paddy, Wheat, Corn, Soyabean, Mustard, chickpea, Millets, Pulses, Sunflower,Safflower, Flaxseed",
+//                123,
+//
+//            )
+////            db.collection("Seed MarketFarmer_Market").document("1").set(city)
+////            db.collection("Seed MarketFarmer_Market").document("2").set(city)
+//            Toast.makeText(this, "Data Added", Toast.LENGTH_SHORT).show()
+//
+//
+//            db.collection("Equipments MarketFarmer_Market").document("1").set(city)
+//            db.collection("Equipments MarketFarmer_Market").document("2").set(city)
 //            db.collection("Seed MarketFarmer_Market").document("2").set(city1)
 
 
@@ -216,7 +212,7 @@ class MainActivity : AppCompatActivity() {
 
             // Intent is use to change the activity
 
-            val intent = Intent(this@MainActivity, FarmerMainActivity::class.java)
+            val intent = Intent(this@MainActivity, SignIn::class.java)
             startActivity(intent)
             binding.textView.setTransitionVisibility(View.VISIBLE)
         }
@@ -237,6 +233,12 @@ class MainActivity : AppCompatActivity() {
 
             // Intent is use to change the activity
             val intent = Intent(this@MainActivity, SignUp::class.java)
+            startActivity(intent)
+        }
+
+        binding.login.setOnClickListener(){
+
+            val intent = Intent(this@MainActivity, FarmerMainActivity::class.java)
             startActivity(intent)
         }
 

@@ -5,7 +5,8 @@
     <FrameLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        tools:context=".Farmer_Main.Home">
+        tools:context=".Farmer_Main.Home"
+        android:background="@drawable/blur_background">
 
         <GridLayout
             android:layout_width="match_parent"
@@ -106,7 +107,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="14dp"
-                        android:text="Select Crop"
+                        android:text="Crop Requridments"
                         android:textAlignment="center" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -221,8 +222,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="5dp">
+                android:background="@drawable/gradient">
 <!--                android:layout_margin="120dp">-->
             <TextView
                 android:layout_width="wrap_content"
@@ -234,18 +234,16 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="40dp"
                     android:text="Yes"
                     android:id="@+id/ButtonExit"/>
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="40dp"
                     android:text="No"
                     android:id="@+id/StopExit"/>
 

@@ -116,8 +116,8 @@ class FarmerMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 //        System.exit(-1)
 
         val frag = supportFragmentManager.findFragmentByTag(Home::class.java.simpleName)
-        Toast.makeText(this,frag.toString(),Toast.LENGTH_SHORT).show()
-        Log.d("TAG",frag.toString())
+       // Toast.makeText(this,frag.toString(),Toast.LENGTH_SHORT).show()
+       // Log.d("TAG",frag.toString())
 
 
 

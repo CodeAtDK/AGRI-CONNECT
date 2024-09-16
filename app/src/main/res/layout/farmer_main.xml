@@ -18,7 +18,7 @@
             android:layout_height="56dp"
             android:id="@+id/toolbar"
             android:elevation="4dp"
-            android:background="@color/blue"
+            android:background="#0CCEE7"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
@@ -35,8 +35,8 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu"
-        app:itemIconTint="@color/blue"
-        app:itemTextColor="@color/blue"/>
+        app:itemIconTint="#0C9AE7"
+        app:itemTextColor="#0CCEE7"/>
 
 
 
