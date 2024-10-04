@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:background="@drawable/roundcorners"
-        android:hint="Sirname"
+        android:hint="Surname"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:paddingLeft="9dp"

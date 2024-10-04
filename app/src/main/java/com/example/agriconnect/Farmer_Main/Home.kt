@@ -82,20 +82,20 @@ class Home : Fragment(){
 //                addToBackStack(null)
 //
 //            }
-            Toast.makeText(this@Home.requireActivity(),"The Weather Forecasting will be avilable Soon....",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@Home.requireActivity(),"The Weather Forecasting will be available Soon....",Toast.LENGTH_SHORT).show()
         }
         binding.cropSuggestionCard.setOnClickListener() {
-//            parentFragmentManager.commit {
-//                setReorderingAllowed(true)
-//                replace(
-//                    R.id.fragment_container,
-//                    Crop_Suggestion::class.java,
-//                    null
-//                ) // Replace with your FragmentContainerView's ID and the new Fragment class
-//                addToBackStack(null)
-//
-//            }
-            Toast.makeText(this@Home.requireActivity(),"Crop Requiredments will be available Soon....",Toast.LENGTH_SHORT).show()
+            parentFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace(
+                    R.id.fragment_container,
+                    Crop_Suggestion::class.java,
+                    null
+                ) // Replace with your FragmentContainerView's ID and the new Fragment class
+                addToBackStack(null)
+
+            }
+//            Toast.makeText(this@Home.requireActivity(),"Crop Requiredments will be available Soon....",Toast.LENGTH_SHORT).show()
         }
         binding.governmentSchemesCard.setOnClickListener() {
             parentFragmentManager.commit {

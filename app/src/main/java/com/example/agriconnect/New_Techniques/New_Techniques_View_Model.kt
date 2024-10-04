@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
+
 class New_Techniques_View_Model : ViewModel() {
 
     private var Techniques_Name = MutableLiveData<String>()

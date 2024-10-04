@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.example.agriconnect.Crop_Suggestion.CropReuridments_DataClass
 import com.example.agriconnect.Farmer_Main.FarmerMainActivity
 import com.example.agriconnect.Farmer_Main.Home
 import com.example.agriconnect.Farmer_Market.FarmerProduct
@@ -237,6 +238,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.login.setOnClickListener(){
+
+            val city = CropReuridments_DataClass(
+                "Corn",
+                "Crop_Requridments/corn.jpg"
+            )
+            db.collection("Crop Requirements").document("1").set(city)
+            db.collection("Crop Requirements").document("2").set(city)
 
             val intent = Intent(this@MainActivity, FarmerMainActivity::class.java)
             startActivity(intent)

@@ -66,7 +66,7 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
     // Import the Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+    implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
 
 
     // TODO: Add the dependencies for Firebase products you want to use
@@ -87,7 +87,7 @@ dependencies {
     implementation("com.google.firebase:firebase-storage")
 
     // ... other dependencies
-    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
    // annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1' // For Glide's annotation processor
 
 

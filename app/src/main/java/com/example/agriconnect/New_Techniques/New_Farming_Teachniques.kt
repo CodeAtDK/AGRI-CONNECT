@@ -50,8 +50,7 @@ class New_Farming_Teachniques : Fragment() {
         // Inflate the layout for this fragment
         //  return inflater.inflate(R.layout.fragment_new__farming__teachniques, container, false)
 
-        New_Techniques_View_Model1 =
-            ViewModelProvider(requireActivity()).get(New_Techniques_View_Model::class.java)
+        New_Techniques_View_Model1 = ViewModelProvider(requireActivity()).get(New_Techniques_View_Model::class.java)
 
         _binding = FragmentNewFarmingTeachniquesBinding.inflate(inflater, container, false)
 
