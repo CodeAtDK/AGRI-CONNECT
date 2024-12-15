@@ -57,8 +57,8 @@ class AdapterClass_for_Crop_Requriedments(private val dataList_for_Crop_Requridm
 
             Glide.with(holder.itemView.context)
                 .load(uri)
-                .placeholder(R.drawable.government_schemes)
-                .error(R.drawable.new_farming_crops)
+                .placeholder(R.drawable.loding)
+                .error(R.drawable.error)
                 .into(holder.CropImg)
         }.addOnFailureListener { exception ->
             // Handle any errors during the download

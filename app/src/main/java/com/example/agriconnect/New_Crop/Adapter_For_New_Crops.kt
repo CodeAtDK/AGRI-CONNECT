@@ -61,8 +61,8 @@ class Adapter_For_New_Crops (private val dataList_for_New_Crop:ArrayList<New_Far
 
             Glide.with(holder.itemView.context)
                 .load(uri)
-                .placeholder(R.drawable.government_schemes)
-                .error(R.drawable.new_farming_crops)
+                .placeholder(R.drawable.loding)
+                .error(R.drawable.error)
                 .into(holder.New_Img)
         }.addOnFailureListener { exception ->
             // Handle any errors during the download

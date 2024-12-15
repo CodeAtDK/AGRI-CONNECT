@@ -14,6 +14,7 @@ import com.example.agriconnect.Crop_Suggestion.CropReuridments_DataClass
 import com.example.agriconnect.Farmer_Main.FarmerMainActivity
 import com.example.agriconnect.Farmer_Main.Home
 import com.example.agriconnect.Farmer_Market.FarmerProduct
+import com.example.agriconnect.Farmer_Market.MarketDiscription.Product_Details
 import com.example.agriconnect.GovernmentSchemes.GovernmentSchemes
 import com.example.agriconnect.New_Crop.New_Farming_Crop_Data_Class
 import com.example.agriconnect.New_Techniques.New_Techniques_Data_Class
@@ -50,164 +51,6 @@ class MainActivity : AppCompatActivity() {
 
         // This button will change the activity from main to SignIn
         binding.buttonSignIn.setOnClickListener() {
-//
-//
-//            val docRef = db.collection("GovernmentSchemes").document("2")
-//            docRef.get().addOnSuccessListener { documentSnapshot ->
-//                if (documentSnapshot.exists()) {
-//                    val data = documentSnapshot.toObject<GovernmentSchemes>(GovernmentSchemes::class.java)
-//                    // Access data fields (e.g., val item = data["item"])
-//
-//                    Log.d("TAG", "DocumentSnapshot data: $data")
-//                } else {
-//                    // Document does not exist
-//                    Log.d("TAG", "DocumentSnapshot does not exist")
-//                }
-//            }
-
-
-
-//            val city = New_Techniques_Data_Class(
-//                "New_Techniques/Drone_Farming.jpeg",
-//                "Drone Farming",
-//                "An agricultural drone is an unmanned aerial vehicle used in agriculture operations, mostly in yield optimization and in monitoring crop growth and crop production. Agricultural drones provide information on crop growth stages, crop health, and soil variations. Multispectral sensors are used on agricultural drones to image electromagnetic radiation beyond the visible spectrum, including near-infrared and short-wave infrared.",
-//                        "1. Crop Monitoring\n" +
-//                        "High-resolution images and data on plant health, water levels, and pest infestations1.\n" +
-//                        "\n" +
-//                        "2. Precision Farming\n" +
-//                        "Targeted application of fertilizers, pesticides, and herbicides1.\n" +
-//                        "\n" +
-//                        "3. Surveying and Mapping\n " +
-//                        "Creating accurate maps of your farm to identify areas needing attention1.\n" +
-//                        "\n" +
-//                        "4. Livestock Monitoring\n " +
-//                        "Keeping track of animal health and location1.",
-//                "1. Choose the Right Drone\n" +
-//                        "Select a drone that suits your needs. For example, the DJI MG-1S is popular for spraying pesticides and fertilizers2.\n" +
-//                        "\n" +
-//                        "2. Learn to Operate the Drone\n" +
-//                        "Training: Take a course or watch tutorials on how to assemble and operate agricultural drones\n" +
-//                        "\n" +
-//                        "3. Regulations\n" +
-//                        "Ensure you comply with local regulations regarding drone usage.\n" +
-//                        "\n" +
-//                        "4. Plan Your Flights\n" +
-//                        "* Mapping: Use software to plan flight paths and ensure comprehensive coverage of your fields.\n" +
-//                        "* Data Collection: Regularly fly the drone to collect data and monitor crop health.\n" +
-//                        "\n" +
-//                        "5. Analyze Data and Take Action\n" +
-//                        "* Data Analysis: Use software to analyze the data collected by the drone.\n" +
-//                        "* Decision Making: Make informed decisions based on the data to optimize crop yields and manage resources efficiently1.\n" +
-//                        "\n" +
-//                        "6. Maintenance and Updates\n" +
-//                        "* Regular Maintenance: Keep your drone in good condition with regular checks and maintenance.\n" +
-//                        "* Software Updates: Ensure your software is up-to-date for the latest features and improvements.",
-//                "1. Drone with Camera and Sensors: For capturing images and data.\n" +
-//                        "2. Spray System: If you plan to use the drone for applying chemicals.\n" +
-//                        "3. Software: For data analysis and flight planning.",
-//                "",
-//            )
-
-//            val city = New_Farming_Crop_Data_Class(
-//                "New_Crops/Pearl Farming.jpeg",
-//                "Pearl Farming",
-//                "Pearls have great demand in national and export markets. You can easily pursue pearl farming subsequently with fish farming and other commercial aquaculture activities.\n" +
-//                        "Talking about pearl farming profit, you can expect to earn 50-60% from what you invest. Furthermore, if you acquire the right pearl farming training and tools, you can expect to earn even 100% profit — but that’s a long road.",
-//                "1. Site Selection & Setting Pearl Farm\n" +
-//                        "You have to select the site and get its water approved by government-approved laboratories. CIFA-approved laboratories are ideal as they are genuine and reliable. Their test will help you decide whether the water quality is good for pearl farming or not.\n" +
-//                        "\n" +
-//                        "2. Obtaining Pearl Oyster Stock\n" +
-//                        "After site selection, it’s important to obtain the oyster stock through the following methods:\n" +
-//                        "\n" +
-//                        "Spat Collection \n" +
-//                        "In this method, you can collect the young swimming oyster larvae called spat. These larvae are in a perfect state for grafting and can be easily attached to any surface.\n" +
-//                        "\n" +
-//                        "Hatchery Production\n" +
-//                        "You can also refer to hatchery-produced spat if they are available in your area and are reasonably priced.\n" +
-//                        "\n" +
-//                        "Collect Adult Oysters\n" +
-//                        "You can collect adult oysters that are available at reasonable prices. However, they have more mortality risk.\n" +
-//                        "\n" +
-//                        "3. Drill & Hang Oysters\n" +
-//                        "Drill and Hang Oysters\n" +
-//                        "\n" +
-//                        "Once you have acquired the stock of oysters, keep them in the approved water site. You can hang them in chaplets, which are similar to circlets or garlands. You can place them in big net containers. \n" +
-//                        "\n" +
-//                        "4. Grafting\n" +
-//                        "You can use the artificial method of grafting to develop pearls. You can plant an artificial nucleus in a pearl oyster’s tissue that will develop into a pearl.\n" +
-//                        "\n" +
-//                        "5. Pearl Development Process\n" +
-//                        "Once you implant the nucleus, it irritates the oyster. And as a result, the oyster covers itself with a calcium carbonate layer. It will take 12-24 months for pearls to develop. During this transition, take proper care, feed them timely, and prevent them from any kind of infection. \n" +
-//                        "\n" +
-//                        "6. Marketing of Pearls\n" +
-//                        "Once you have pearls produced, ensure you market them to the right market. You can endorse them to jewellery, cosmetics, and garment brands. Have a marketing strategy in place. And if you have a good quality stock of pearls, you won’t have to bid hard to trade them in the market. Their quality will speak for themselves. ",
-//
-//                "1. Infrastructure:\n" +
-//                        "* Ponds or Cages: Depending on whether you’re doing freshwater or saltwater farming, you’ll need ponds or cages to house the oysters1.\n" +
-//                        "* Rafts and Longlines: For saltwater farming, rafts and longlines are used to suspend the oysters in the water2.\n" +
-//                        "\n" +
-//                        "2. Water Quality Management:\n" +
-//                        "* Water Testing Kits: To regularly check the water quality, including pH, salinity, and temperature3.\n" +
-//                        "* Aerators: To ensure proper oxygen levels in the water\n" +
-//                        "\n" +
-//                        "3. Oyster Handling Equipment:\n" +
-//                        "*Nets and Baskets: For collecting and handling oysters2.\n" +
-//                        "*Nylon Bags: Used to hold oysters during the initial stages after nucleation1.\n" +
-//                        "\n" +
-//                        "4. Nucleation and Grafting Tools:\n" +
-//                        "*Surgical Instruments: Precision tools for the delicate process of inserting nuclei into oysters3.\n" +
-//                        "*Nuclei: Small beads or pieces of tissue used to stimulate pearl formation1.\n" +
-//                        "\n" +
-//                        "5. Feeding and Maintenance:\n" +
-//                        "* Feeding Systems: Automated or manual systems to feed the oysters3.\n" +
-//                        "* Cleaning Equipment: Brushes and other tools to clean the oysters and their environment1.\n" +
-//                        "\n" +
-//                        "6. Harvesting and Processing:\n" +
-//                        "* Harvesting Tools: Equipment for safely removing pearls from oysters2.\n" +
-//                        "* Sorting and Grading Tools: Tools to sort and grade pearls based on size, shape, and luster3.\n" +
-//                        "\n" +
-//                        "7. Safety and Miscellaneous:\n" +
-//                        "* Protective Gear: Gloves, masks, and other protective gear for handling oysters and chemicals1.\n" +
-//                        "* Storage Containers: For storing harvested pearls and equipment",
-//            )
-
-//            val city = FarmerProduct(
-//                "Farmer_Products/71jUyhTDoWL._SL1376_.jpg",
-//                "WHITE COTTON/GOSSYPIUM SEED-100 GM (350 Seeds Per Packet)",
-//                575,
-//                "100g",
-//                "1. WHITE COTTON/GOSSYPIUM SEED While cotton (Gossypium) has been around for a long time and grown mainly for its fibers, cotton growing can be a fun learning experience. Not only will get a chance to learn some cotton plant info, but they will love the fluffy, white product of all their labor. You can take the lesson further by exploring how your harvested cotton gets processed to make the clothes we wear.\n" +
-//                        "2. HOW TO GROW:Fill the container with the potting mix, leaving a space of about two inches or so from the top. Place about three cotton seeds on top of the soil and then cover with another inch or so of potting mix. Place in sunlight and keep moist, adding water as needed so the upper portion of soil does not get too dry.You should begin to see sprouts within 7-10 days.\n" +
-//                        "3. Once the seedlings have sprouted, you can thoroughly water the plants each week as part of your cotton plant care.Then you may transplant the seedlings to various pots or desired areas\n" +
-//                        "4. Popular plant Seed *Easily Grown *Quality Seeds\n" +
-//                        "5. All pictures shown are for illustration purpose only.",
-//                null,
-//            )
-
-//            val city = FarmerProduct(
-//                "Farmer_Products/JhonDeereW-70.avif",
-//                "W-70 Synchrosmart combine harvester Powerpro",
-//                2750000,
-//                "10",
-//                "John Deere W-70 Synchrosmart Combine Harvester Powerpro is a powerful, yet light weight 100HP compact harvester! It is swift and can work efficiently in wet and small fields. Due to its ergonomic dimensions it can easily enter where other harvesters cannot.\n" +
-//                        "Compact design helps in crossing through narrow lanes\n" +
-//                        "Saves fuel due to light wight and offers high productivity\n" +
-//                        "Suitable for harvesting of  Paddy, Wheat, Corn, Soyabean, Mustard, chickpea, Millets, Pulses, Sunflower,Safflower, Flaxseed",
-//                123,
-//
-//            )
-////            db.collection("Seed MarketFarmer_Market").document("1").set(city)
-////            db.collection("Seed MarketFarmer_Market").document("2").set(city)
-//            Toast.makeText(this, "Data Added", Toast.LENGTH_SHORT).show()
-//
-//
-//            db.collection("Equipments MarketFarmer_Market").document("1").set(city)
-//            db.collection("Equipments MarketFarmer_Market").document("2").set(city)
-//            db.collection("Seed MarketFarmer_Market").document("2").set(city1)
-
-
-
-
 
 
 
@@ -223,15 +66,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-//            val storageRef = FirebaseStorage.getInstance().reference
-//            val userImgProfile = storageRef.child("farmer_market_logo.png")
-//            val inputStream = resources.openRawResource(R.drawable.farmer_market_logo)
-//
-//            // Upload the image data from the input stream
-//            val uploadTask = userImgProfile.putStream(inputStream)
-
-
             // Intent is use to change the activity
             val intent = Intent(this@MainActivity, SignUp::class.java)
             startActivity(intent)
@@ -239,15 +73,168 @@ class MainActivity : AppCompatActivity() {
 
         binding.login.setOnClickListener(){
 
-            val city = CropReuridments_DataClass(
-                "Corn",
-                "Crop_Requridments/corn.jpg"
-            )
-            db.collection("Crop Requirements").document("1").set(city)
-            db.collection("Crop Requirements").document("2").set(city)
+//            val city1 = CropReuridments_DataClass(
+//                "Rice",
+//                "Crop_Requridments/1.jpg",
+//                "Total water requirement is 1100-1250",
+//                " The daily consumptive use of rice varies from 6-10 mm and total water is ranges \n" +
+//                        "from 1100 to 1250 mm depending upon the agro climatic situation.  Of the total water \n" +
+//                        "required for the crop, 3% or 40 mm is used for the nursery, 16% or 200 mm for the land \n" +
+//                        "preparation i.e. puddling and 81% or 1000 mm for field irrigation of the crop.\n" +
+//                        " The daily consumptive use of rice varies from 6-10 mm and total water is ranges \n" +
+//                        "from 1100 to 1250 mm depending upon the agro climatic situation.  Of the total water \n" +
+//                        "required for the crop, 3% or 40 mm is used for the nursery, 16% or 200 mm for the land \n" +
+//                        "preparation i.e. puddling and 81% or 1000 mm for field irrigation of the crop.\n",
+//            )
+//            val city2 = CropReuridments_DataClass(
+//                "Groundnut",
+//                "Crop_Requridments/2.jpg",
+//                "Total water requirement 500-550 mm",
+//                " Evapotranspiration is low during the first 35 days after sowing and last 35 days \n" +
+//                        "before harvest and reaches a peak requirement between peg penetration and pod \n" +
+//                        "development stages.  After the sowing irrigation the second irrigation can be scheduled \n" +
+//                        "25 days after sowing i.e. 4 or 6 days after first hand hoeing and thereafter irrigation \n" +
+//                        "interval of 15 days is maintained upto peak flowering.  During the critical stages the \n" +
+//                        "interval may be 7 or 10 days depending upon the soil and climate.  During maturity \n" +
+//                        "period the interval is 15 days.",
+//            )
+//            val city3 = CropReuridments_DataClass(
+//                "Finger millet",
+//                "Crop_Requridments/3.jpg",
+//                "Total water requirement: 350 mm",
+//                "Finger millet is a drought tolerant crop.  Pre-planting irrigation at 7 or 8 cm is \n" +
+//                        "given.   \n" +
+//                        "Third day after transplantation life irrigation with small quantity of water is \n" +
+//                        "sufficient for uniform establishment.  Water is then withheld for 10-15 days after the \n" +
+//                        "establishment of seedling for healthy and vigorous growth.  \n" +
+//                        "Subsequently three \n" +
+//                        "irrigations are essential at primordial initiation, flowering and grain filling stages.\n",
+//            )
+//            val city4 = CropReuridments_DataClass(
+//                "Sugarcane",
+//                "Crop_Requridments/4.jpg",
+//                "Total water requirement: 1800-2200 mm",
+//                "Formative phase (120 days from planting) is the critical period for water demand.  \n" +
+//                        "To ensure uniform emergence and optimum number of tillers per unit area lesser quantity \n" +
+//                        "of water at more frequencies is preferable.  The response for applied water is more during \n" +
+//                        "this critical phase during which the crop needs higher quantity of water comparing, the \n" +
+//                        "other two phases.  Water requirement, number of irrigations etc., are higher during this \n" +
+//                        "period.  As there is no secondary thickening of stem, elongation of stem as sink for \n" +
+//                        "storage of sugar it is desirable to maintain optimum level of moisture during grand \n" +
+//                        "growth period.  Response for water is less in this stage and this will be still less in the \n" +
+//                        "ripening stage.  During the ripening phase as harvest time approaches soil moisture \n" +
+//                        "content should be allowed to decrease gradually so that growth of cane is checked and \n" +
+//                        "sucrose content is increased.",
+//            )
+//            val city5 = CropReuridments_DataClass(
+//                "Maize",
+//                "Crop_Requridments/5.jpg",
+//                " Total water requirement: 500 – 600 mm",
+//                "The water requirement of maize is higher but it is very efficient in water use.  \n" +
+//                        "Growth stages of maize crop are sowing, four leaf stage, knee high, grand growth, \n" +
+//                        "tasseling, silking early dough and late dough stages.  Crop uniformly requires water in all \n" +
+//                        "these stages.  Of this, tasseling, silking and early dough stages are critical periods.\n",
+//            )
+//            val city6 = CropReuridments_DataClass(
+//                "Cotton",
+//                "Crop_Requridments/6.jpg",
+//                "Total water requirement: 550 – 600 mm",
+//                "Cotton is sensitive to soil moisture conditions.  Little water is used by plant with \n" +
+//                        "early part of the season and more water is lost through evaporation than transpiration.  As \n" +
+//                        "the plant grows, the use of water increases from 3 mm / day reaching a peak of 10 mm a \n" +
+//                        "day when the plant is loaded with flowers and boll.  Water used during the emergence and \n" +
+//                        "early plant growth is only 10% of the total requirement.  Ample moisture during \n" +
+//                        "flowering and boll development stages is essential.  In the early stage as well as at the end \n" +
+//                        "the crop requires less water.  water requirement remains high till the boll development \n" +
+//                        "stage.  If excess water is given in the stages other than critical stages it encourages the \n" +
+//                        "vegetative growth because it is a indeterminate plant thereby boll setting may be \n" +
+//                        "decreased.  Irrigation is continued until the first boll of the last flush opens, and then \n" +
+//                        "irrigation is stopped.",
+//            )
+//            val city7 = CropReuridments_DataClass(
+//                "Sorghum",
+//                "Crop_Requridments/7.jpg",
+//                " Total water requirement: 350-500 mm\n",
+//                "The critical periods of water requirement are booting, flowering and dough  \n" +
+//                        "stages.  The crop will be irrigated immediately after sowing.  Next irritation is given 15 \n" +
+//                        "days sowing to encourage development of a strong secondary root system.  irrigation \n" +
+//                        "prior to heading and ten days after heading are essential for successful crop production.\n",
+//            )
+//            val city8 = CropReuridments_DataClass(
+//                "Pulses",
+//                "Crop_Requridments/8.jpg",
+//                " Total water requirement – 200-450 mm",
+//                " Mostly the pulse are grown under rainfed condition.  Some pulse crops like \n" +
+//                        "Redgram, Blackgram, Greengram are grown in summer season as irrigated crop which \n" +
+//                        "need 3 to 4 irrigation at critical stags like germination, flowering and pod formation.\n",
+//            )
+//            val city9 = CropReuridments_DataClass(
+//                "Wheat",
+//                "Crop_Requridments/9.jpg",
+//                "Total water requirement – 400 to 600 mm",
+//                "Wheat Water Requirements\n" +
+//                        "Wheat is a staple crop that requires careful water management to achieve optimal yields. Here are the key details regarding its water requirements:\n" +
+//                        "\n" +
+//                        "Water Requirement:\n" +
+//                        "\n" +
+//                        "Under favorable conditions, about 1000 cubic meters of water is needed to produce 1 ton of wheat.\n" +
+//                        "\n" +
+//                        "In less favorable conditions, this can increase to about 5000 cubic meters of water per ton.\n" +
+//                        "\n" +
+//                        "On average, the water requirement for wheat ranges from 400 to 600 mm during the growing season.\n" +
+//                        "\n" +
+//                        "Irrigation Methods:\n" +
+//                        "\n" +
+//                        "Surface Irrigation: Common methods include check basin and border methods.\n" +
+//                        "\n" +
+//                        "Sprinkler Irrigation: Useful when water supply is limited or the topography is not suited to surface irrigation.\n" +
+//                        "\n" +
+//                        "Water Management:\n" +
+//                        "\n" +
+//                        "Saline Conditions: Wheat can tolerate salinity levels up to 12 dS/m for 50% yield. In saline soils, furrow irrigation can help achieve better crop stands and yields.\n" +
+//                        "\n" +
+//                        "High Water Table: In areas with a high water table, fewer irrigations are needed. For example, one irrigation at the Crown Root Initiation (CRI) stage may be sufficient when the water table is between 100 and 110 cm.\n" +
+//                        "\n" +
+//                        "Critical Stages for Irrigation:\n" +
+//                        "\n" +
+//                        "Crown Root Initiation (CRI) Stage: Critical for establishing a good root system.\n" +
+//                        "\n" +
+//                        "Tillering Stage: Important for the development of tillers.\n" +
+//                        "\n" +
+//                        "Flowering Stage: Ensures proper grain filling and development.\n" +
+//                        "\n" +
+//                        "Grain Filling Stage: Crucial for achieving high grain yield and quality.",
+//            )
+//            val city10 = CropReuridments_DataClass(
+//                "Bajra",
+//                "Crop_Requridments/10.jpg",
+//                "Total water requirement – 300-500 mm mm",
+//                "Vegetative Stage: Moist weather and light to medium rainfall are beneficial.\n" +
+//                        "\n" +
+//                        "Flowering and Grain Development Stages: Clear and dry weather is ideal. Bajra cannot tolerate waterlogging1." +
+//                        "Rainfed Cultivation: Bajra is often grown in rainfed conditions, relying on natural rainfall.\n" +
+//                        "\n" +
+//                        "Supplementary Irrigation: In areas with low rainfall, supplementary irrigation may be needed during critical growth stages." +
+//                        "Moisture Conservation: Practices such as mulching and maintaining soil moisture can help conserve water.\n" +
+//                        "\n" +
+//                        "Efficient Irrigation: Techniques like drip irrigation can be used to provide water directly to the root zone, reducing wastage.",
+//            )
+//
+//
+//            db.collection("Crop Requirements").document("1").set(city1)
+//            db.collection("Crop Requirements").document("2").set(city2)
+//            db.collection("Crop Requirements").document("3").set(city3)
+//            db.collection("Crop Requirements").document("4").set(city4)
+//            db.collection("Crop Requirements").document("5").set(city5)
+//            db.collection("Crop Requirements").document("6").set(city6)
+//            db.collection("Crop Requirements").document("7").set(city7)
+//            db.collection("Crop Requirements").document("8").set(city8)
+//            db.collection("Crop Requirements").document("9").set(city9)
+//            db.collection("Crop Requirements").document("10").set(city10)
 
             val intent = Intent(this@MainActivity, FarmerMainActivity::class.java)
             startActivity(intent)
+
         }
 
 

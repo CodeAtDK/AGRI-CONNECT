@@ -7,12 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.agriconnect.Crop_Suggestion.Crop_Discription.Crop_Detail
+import com.example.agriconnect.Farmer_Main.Home
 import com.example.agriconnect.New_Techniques.New_Techniques_Discription.New_Techniques_Discriptions
 import com.example.agriconnect.R
 import com.example.agriconnect.databinding.FragmentCropDetailBinding
@@ -29,6 +31,8 @@ class Crop_Suggestion : Fragment() {
 
     lateinit var Crop_Name : Array<String>
     lateinit var Crop_Img : Array<String>
+    lateinit var Crop_Water_Level : Array<String>
+    lateinit var Crop_Detail1 : Array<String>
 
 
     var db = Firebase.firestore
@@ -81,11 +85,15 @@ class Crop_Suggestion : Fragment() {
 
                         Crop_Img = Crop_Img + data.ImageURI.toString()
                         Crop_Name = Crop_Name + data.CropName.toString()
+                        Crop_Water_Level = Crop_Water_Level + data.CropWaterLEVEL.toString()
+                        Crop_Detail1 = Crop_Detail1 + data.CropWaterLEVELDETAILS.toString()
 
                         val dataClass = CropReuridments_DataClass(
 
                             data.CropName,
                             data.ImageURI,
+                            data.CropWaterLEVEL,
+                            data.CropWaterLEVELDETAILS
                         )
                         dataList.add(dataClass)
 
@@ -135,9 +143,15 @@ class Crop_Suggestion : Fragment() {
         Crop_Img = arrayOf(
 
         )
+        Crop_Water_Level = arrayOf(
+
+        )
+        Crop_Detail1 = arrayOf(
+
+        )
         for(i in Crop_Name.indices){
 
-            val dataClass = CropReuridments_DataClass(Crop_Name[i],Crop_Img[i])
+            val dataClass = CropReuridments_DataClass(Crop_Name[i],Crop_Img[i],Crop_Water_Level[i],Crop_Detail1[i])
             dataList.add(dataClass)
         }
     }
@@ -150,10 +164,12 @@ class Crop_Suggestion : Fragment() {
         adapter.setOnItemClickListener(object :
             AdapterClass_for_Crop_Requriedments.onItemClickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@Crop_Suggestion.requireActivity(),"Will Available Soon",Toast.LENGTH_SHORT).show()
+                // Toast.makeText(this@Crop_Suggestion.requireActivity(),"Will Available Soon",Toast.LENGTH_SHORT).show()
 
                 MyViewModel_Crop_Requriment.setData(datalist[position].CropName)
                 MyViewModel_Crop_Requriment.setData1(datalist[position].ImageURI)
+                MyViewModel_Crop_Requriment.setData2(datalist[position].CropWaterLEVEL)
+                MyViewModel_Crop_Requriment.setData3(datalist[position].CropWaterLEVELDETAILS)
 
                 parentFragmentManager.commit {
                     setReorderingAllowed(true)
@@ -171,5 +187,36 @@ class Crop_Suggestion : Fragment() {
         )
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(this,object : OnBackPressedCallback(true){
+
+            override fun handleOnBackPressed() {
+
+//                if(parentFragmentManager.findFragmentById(R.id.fragment_container) is Home) {
+                Log.d("Tag","${parentFragmentManager.findFragmentById(R.id.fragment_container)}")
+//
+//
+//                }
+
+                parentFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace(
+                        R.id.fragment_container,
+                        Home::class.java,
+                        null
+                    ) // Replace with your FragmentContainerView's ID and the new Fragment class
+                    addToBackStack(null)
+
+                }
+
+
+
+
+
+            }
+        })
+    }
 
 }

@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Crop_Suggestion.Crop_Discription.Crop_Detail"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginBottom="15dp">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/farmer_background"
+        android:src="@drawable/loding"
         android:layout_marginTop="60dp"
         android:id="@+id/Crop_Image"
         />
@@ -18,13 +24,39 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hi i am Dk"
+        android:text="CROP NAME"
         android:textAlignment="center"
         android:textSize="25dp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
         android:id="@+id/Crop_Name"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Water level"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:id="@+id/Crop_water_level"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Crop_Detail"/>
 
 
 </LinearLayout>
+    </ScrollView>
 </layout>

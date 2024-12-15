@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
+import com.example.agriconnect.Farmer_Main.Home
 import com.example.agriconnect.Farmer_Market.MarketPlace.Market_Place_Layout
 import com.example.agriconnect.GovernmentSchemes.GovernmentSchemeDiscripition.Government_Scheme_Discription
 import com.example.agriconnect.R
@@ -76,5 +78,36 @@ class Farmer_Shop : Fragment() {
 
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(this,object : OnBackPressedCallback(true){
+
+            override fun handleOnBackPressed() {
+
+//                if(parentFragmentManager.findFragmentById(R.id.fragment_container) is Home) {
+                Log.d("Tag","${parentFragmentManager.findFragmentById(R.id.fragment_container)}")
+//
+//
+//                }
+
+                parentFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace(
+                        R.id.fragment_container,
+                        Home::class.java,
+                        null
+                    ) // Replace with your FragmentContainerView's ID and the new Fragment class
+                    addToBackStack(null)
+
+                }
+
+
+
+
+
+            }
+        })
+    }
 
 }

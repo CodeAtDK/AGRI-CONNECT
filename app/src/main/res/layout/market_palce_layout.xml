@@ -28,7 +28,7 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="10dp"
-                android:src="@drawable/weather_logo" />
+                android:src="@drawable/loding" />
 
             <TextView
                 android:id="@+id/Product_Name"

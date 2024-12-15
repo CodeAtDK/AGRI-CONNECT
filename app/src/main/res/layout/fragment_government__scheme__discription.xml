@@ -17,7 +17,6 @@
         android:layout_height="wrap_content"
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
-        android:textColor="@color/black"
         android:id="@+id/Government_Scheme_Discription_Name"
         android:paddingRight="5dp"
         android:text="Scheme Name"
@@ -29,7 +28,6 @@
             android:layout_height="wrap_content"
             android:text="Details"
             android:paddingTop="30dp"
-            android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="17dp"
             android:textStyle="bold"/>
@@ -40,7 +38,6 @@
         android:paddingLeft="5dp"
         android:id="@+id/Government_Scheme_Discription_Discription"
         android:paddingRight="5dp"
-        android:textColor="@color/black"
         android:text="Scheme Discription"
         android:textAlignment="center"
         android:textSize="15dp" />
@@ -49,7 +46,6 @@
             android:layout_height="wrap_content"
             android:text="Benfits"
             android:paddingTop="30dp"
-            android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="17dp"
             android:textStyle="bold"/>
@@ -58,7 +54,6 @@
         android:layout_height="wrap_content"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:textColor="@color/black"
         android:text="Scheme Benefits"
         android:textAlignment="center"
         android:id="@+id/Government_Scheme_Benefits"
@@ -70,14 +65,12 @@
             android:text="Eligibility"
             android:textAlignment="center"
             android:paddingTop="30dp"
-            android:textColor="@color/black"
             android:textSize="17dp"
             android:textStyle="bold"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Scheme Eligibility"
-            android:textColor="@color/black"
             android:id="@+id/Govenment_Scheme_Eligibility"
             android:textAlignment="center"/>
         <TextView
@@ -85,7 +78,6 @@
             android:layout_height="wrap_content"
             android:text="Documents Required"
             android:textAlignment="center"
-            android:textColor="@color/black"
             android:textSize="17dp"
             android:paddingTop="30dp"
             android:textStyle="bold"/>
@@ -93,7 +85,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Documents Required"
-            android:textColor="@color/black"
             android:id="@+id/Government_Scheme_Documents_Required"
             android:textAlignment="center"/>
 

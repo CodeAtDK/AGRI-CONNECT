@@ -1,16 +1,19 @@
 package com.example.agriconnect.Farmer_Market.MarketDiscription
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.agriconnect.Buying_Process.Address_Confirmation_In_Buying_Process
+import com.example.agriconnect.Farmer_Main.Home
 import com.example.agriconnect.Farmer_Market.Farmer_Shop_ViewModel
 import com.example.agriconnect.Farmer_Market.MarketPlace.Market_Place_Layout
 import com.example.agriconnect.R
@@ -50,8 +53,8 @@ class Product_Details : Fragment() {
                 val imageUrl = uri.toString()
                 Glide.with(this)
                     .load(imageUrl)
-                    .placeholder(R.drawable.government_schemes)
-                    .error(R.drawable.new_farming_crops)
+                    .placeholder(R.drawable.loding)
+                    .error(R.drawable.error)
                     .into(binding.ProductMarketImage)
             }.addOnFailureListener { exception ->
 
@@ -92,5 +95,36 @@ class Product_Details : Fragment() {
         return binding.root
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(this,object : OnBackPressedCallback(true){
+
+            override fun handleOnBackPressed() {
+
+//                if(parentFragmentManager.findFragmentById(R.id.fragment_container) is Home) {
+                Log.d("Tag","${parentFragmentManager.findFragmentById(R.id.fragment_container)}")
+//
+//
+//                }
+
+                parentFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace(
+                        R.id.fragment_container,
+                        Market_Place_Layout::class.java,
+                        null
+                    ) // Replace with your FragmentContainerView's ID and the new Fragment class
+                    addToBackStack(null)
+
+                }
+
+
+
+
+
+            }
+        })
+    }
 
 }

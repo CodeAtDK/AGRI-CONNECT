@@ -28,7 +28,7 @@
                 android:layout_gravity="center"
                 android:paddingTop="20dp"
                 android:id="@+id/New_Technique_Description_Image"
-                android:src="@drawable/weather_logo" />
+                android:src="@drawable/loding" />
 
 
 

@@ -28,7 +28,7 @@
                 android:layout_height="229dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/weather_logo" />
+                android:src="@drawable/loding" />
 
 
             <TextView

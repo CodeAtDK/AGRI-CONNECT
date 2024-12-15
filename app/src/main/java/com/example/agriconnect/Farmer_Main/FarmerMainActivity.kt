@@ -12,8 +12,10 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.example.agriconnect.AboutUs.AboutUs
 import com.example.agriconnect.Basic.MainActivity
 import com.example.agriconnect.R
+import com.example.agriconnect.chatbot.Chat_Bot
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -74,6 +76,8 @@ class FarmerMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         when(item.itemId){
 
             R.id.nav_home -> replaceFragment(Home())
+            R.id.nav_ChatBot -> replaceFragment(Chat_Bot())
+            R.id.nav_Conact_Us -> replaceFragment(Contact_Page())
             R.id.nav_Log_Out -> finish()
 
         }
@@ -103,6 +107,7 @@ class FarmerMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 
 
     override fun onBackPressed() {
+        super.onBackPressed()
 //        super.onBackPressed()
 
 

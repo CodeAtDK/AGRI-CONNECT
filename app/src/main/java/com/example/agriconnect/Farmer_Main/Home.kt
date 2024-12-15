@@ -2,6 +2,7 @@ package com.example.agriconnect.Farmer_Main
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -59,6 +60,7 @@ class Home : Fragment(){
 //        _binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+
         binding.ShopCard.setOnClickListener() {
             parentFragmentManager.commit {
                 setReorderingAllowed(true)
@@ -72,17 +74,17 @@ class Home : Fragment(){
             }
         }
         binding.weatherForecastCard.setOnClickListener() {
-//            parentFragmentManager.commit {
-//                setReorderingAllowed(true)
-//                replace(
-//                    R.id.fragment_container,
-//                    Weather_Forecast::class.java,
-//                    null
-//                ) // Replace with your FragmentContainerView's ID and the new Fragment class
-//                addToBackStack(null)
-//
-//            }
-            Toast.makeText(this@Home.requireActivity(),"The Weather Forecasting will be available Soon....",Toast.LENGTH_SHORT).show()
+            parentFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace(
+                    R.id.fragment_container,
+                    Weather_Forecast::class.java,
+                    null
+                ) // Replace with your FragmentContainerView's ID and the new Fragment class
+                addToBackStack(null)
+
+            }
+           // Toast.makeText(this@Home.requireActivity(),"The Weather Forecasting will be available Soon....",Toast.LENGTH_SHORT).show()
         }
         binding.cropSuggestionCard.setOnClickListener() {
             parentFragmentManager.commit {
@@ -169,7 +171,18 @@ class Home : Fragment(){
 
             override fun handleOnBackPressed() {
 
-                binding.cardViewExitapp.setVisibility(VISIBLE)
+                if(parentFragmentManager.findFragmentById(R.id.fragment_container) is Home) {
+//                    Log.d("Tag","${parentFragmentManager.findFragmentById(R.id.fragment_container)}")
+
+                    binding.cardViewExitapp.setVisibility(VISIBLE)
+                }
+
+                else{
+
+                    isEnabled = false
+                    requireActivity().onBackPressed()
+                    isEnabled = true
+                }
 
             }
         })

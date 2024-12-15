@@ -44,7 +44,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="14dp"
+                        android:layout_marginBottom="24dp"
                         android:text="Shop"
                         android:textAlignment="center" />
                 </RelativeLayout>
@@ -107,7 +107,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="14dp"
-                        android:text="Crop Requridments"
+                        android:text="Crop Water
+                        Requirements"
                         android:textAlignment="center" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -230,7 +231,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="Do you Want to Exit the app"/>
+                android:text="Do you Want to Exit the app"
+                android:textColor="@color/black"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -249,13 +251,7 @@
 
             </LinearLayout>
 
-
-
-
         </androidx.cardview.widget.CardView>
-
-
-
 
     </FrameLayout>
 

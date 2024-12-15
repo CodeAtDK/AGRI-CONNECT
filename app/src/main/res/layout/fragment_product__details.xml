@@ -18,7 +18,7 @@
                 android:layout_gravity="center"
                 android:paddingTop="40dp"
                 android:id="@+id/Product_Market_Image"
-                android:src="@drawable/weather_logo" />
+                android:src="@drawable/loding" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -61,6 +61,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center_horizontal"
                 android:text="Add Cart"
+                android:visibility="invisible"
                 android:id="@+id/ADD_to_cart"/>
 
             <Button
@@ -69,6 +70,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center_horizontal"
                 android:text="Rent"
+                android:visibility="invisible"
                 android:id="@+id/Rent_The_Product"/>
 
 

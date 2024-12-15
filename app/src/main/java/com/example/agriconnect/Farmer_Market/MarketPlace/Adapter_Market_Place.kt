@@ -58,8 +58,8 @@ class Adapter_Market_Place (private val dataList_for_Market_Place : ArrayList<Fa
 
             Glide.with(holder.itemView.context)
                 .load(uri)
-                .placeholder(R.drawable.government_schemes)
-                .error(R.drawable.new_farming_crops)
+                .placeholder(R.drawable.loding)
+                .error(R.drawable.error)
                 .into(holder.productImage)
         }.addOnFailureListener { exception ->
             // Handle any errors during the download

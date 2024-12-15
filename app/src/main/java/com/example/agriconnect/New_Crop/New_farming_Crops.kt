@@ -8,11 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.agriconnect.Farmer_Main.Home
 import com.example.agriconnect.GovernmentSchemes.AdapterforGovernmentSchemes
 import com.example.agriconnect.GovernmentSchemes.GovernmentSchemeDiscripition.Government_Scheme_Discription
 import com.example.agriconnect.GovernmentSchemes.GovernmentSchemes
@@ -177,7 +179,7 @@ class New_farming_Crops : Fragment() {
             override fun onItemClick(position: Int) {
 
                 Log.d("TAG", "onItemClick: $position")
-                Toast.makeText(this@New_farming_Crops.requireActivity(), "You clicked on item no. $position", Toast.LENGTH_SHORT).show()
+               // Toast.makeText(this@New_farming_Crops.requireActivity(), "You clicked on item no. $position", Toast.LENGTH_SHORT).show()
                 //val transition: FragmentTransaction = childFragmentManager.beginTransaction()
                 //.replace(R.id.fragment_container, FragmentHomeBinding)
                 //  transition.commit()
@@ -234,5 +236,36 @@ class New_farming_Crops : Fragment() {
 
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(this,object : OnBackPressedCallback(true){
+
+            override fun handleOnBackPressed() {
+
+//                if(parentFragmentManager.findFragmentById(R.id.fragment_container) is Home) {
+                Log.d("Tag","${parentFragmentManager.findFragmentById(R.id.fragment_container)}")
+//
+//
+//                }
+
+                parentFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace(
+                        R.id.fragment_container,
+                        Home::class.java,
+                        null
+                    ) // Replace with your FragmentContainerView's ID and the new Fragment class
+                    addToBackStack(null)
+
+                }
+
+
+
+
+
+            }
+        })
+    }
 
 }

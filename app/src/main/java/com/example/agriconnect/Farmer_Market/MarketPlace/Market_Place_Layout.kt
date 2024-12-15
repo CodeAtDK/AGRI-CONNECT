@@ -8,11 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.agriconnect.Farmer_Main.Home
 import com.example.agriconnect.Farmer_Market.FarmerProduct
+import com.example.agriconnect.Farmer_Market.Farmer_Shop
 import com.example.agriconnect.Farmer_Market.Farmer_Shop_ViewModel
 import com.example.agriconnect.Farmer_Market.MarketDiscription.Product_Details
 import com.example.agriconnect.New_Crop.New_Crops_Discription.New_Crops_Discriptions
@@ -236,7 +239,7 @@ class Market_Place_Layout : Fragment() {
             override fun onItemClick(position: Int) {
 
                 Log.d("TAG", "onItemClick: $position")
-                Toast.makeText(this@Market_Place_Layout.requireActivity(), "You clicked on item no. $position", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@Market_Place_Layout.requireActivity(), "You clicked on item no. $position", Toast.LENGTH_SHORT).show()
                 //val transition: FragmentTransaction = childFragmentManager.beginTransaction()
                 //.replace(R.id.fragment_container, FragmentHomeBinding)
                 //  transition.commit()
@@ -270,8 +273,8 @@ class Market_Place_Layout : Fragment() {
     }
 
     fun count (n: String){
-        var count : Int = 0
 
+           var count : Int = 0
             Log.d("Tag idk ", "$n")
 
             val collectionRef = db.collection("${n}Farmer_Market")
@@ -294,5 +297,36 @@ class Market_Place_Layout : Fragment() {
 
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(this,object : OnBackPressedCallback(true){
+
+            override fun handleOnBackPressed() {
+
+//                if(parentFragmentManager.findFragmentById(R.id.fragment_container) is Home) {
+                Log.d("Tag","${parentFragmentManager.findFragmentById(R.id.fragment_container)}")
+//
+//
+//                }
+
+                parentFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace(
+                        R.id.fragment_container,
+                        Farmer_Shop::class.java,
+                        null
+                    ) // Replace with your FragmentContainerView's ID and the new Fragment class
+                    addToBackStack(null)
+
+                }
+
+
+
+
+
+            }
+        })
+    }
 
 }

@@ -61,8 +61,8 @@ class Adapter_New_Farming_Teachniques (private val dataList_For_New_Techinques :
 
             Glide.with(holder.itemView.context)
                 .load(uri)
-                .placeholder(R.drawable.government_schemes)
-                .error(R.drawable.new_farming_crops)
+                .placeholder(R.drawable.loding)
+                .error(R.drawable.error)
                 .into(holder.New_Techniques_Image)
         }.addOnFailureListener { exception ->
             // Handle any errors during the download

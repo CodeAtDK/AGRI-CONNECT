@@ -28,7 +28,7 @@
                 android:layout_height="209dp"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="10dp"
-                android:src="@drawable/weather_logo" />
+                android:src="@drawable/loding" />
 
             <TextView
                 android:id="@+id/Crop_Name_of_Requridment"
@@ -38,7 +38,7 @@
                 android:paddingLeft="5dp"
                 android:paddingTop="5dp"
                 android:paddingRight="5dp"
-                android:text="Hi I am DK"
+                android:text="Name"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:textStyle="bold"
