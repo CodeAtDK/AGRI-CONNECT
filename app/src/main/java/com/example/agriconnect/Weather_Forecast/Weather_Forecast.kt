@@ -31,7 +31,7 @@ class Weather_Forecast : Fragment() {
     private val binding get() = _binding!!
 
     var CITY: String = "Noida"
-    val API: String = "API KEY" // Use API key
+    val API: String = "c242613efdcf7b874f3f2840befbca59" // Use API key
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

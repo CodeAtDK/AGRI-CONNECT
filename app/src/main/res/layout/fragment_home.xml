@@ -233,13 +233,14 @@
                 android:layout_marginRight="5dp"
                 android:text="Do you Want to Exit the app"
                 android:textColor="@color/black"/>
+
                 <Button
+                    android:id="@+id/ButtonExit"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="36dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:text="Yes"
-                    android:id="@+id/ButtonExit"/>
+                    android:text="Yes" />
 
                 <Button
                     android:layout_width="wrap_content"

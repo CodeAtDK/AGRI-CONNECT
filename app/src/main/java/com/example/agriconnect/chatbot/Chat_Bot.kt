@@ -36,9 +36,9 @@ class Chat_Bot : Fragment() {
 
         val generativeModel = GenerativeModel(
             // For text-only input, use the gemini-pro model
-            modelName = "gemini-pro",
+            modelName = "gemini-2.0-pro",
             // Access your API key as a Build Configuration variable (see "Set up your API key" above)
-            apiKey = "API KEY"
+            apiKey = "AIzaSyBas2t-UYqcsdufqijvhh-RoB_NOCIGjEU"
         )
         chat = generativeModel.startChat(
             history = listOf(
