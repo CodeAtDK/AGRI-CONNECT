@@ -1,18 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Crop_Suggestion.Crop_Suggestion"
-    android:background="@drawable/blur_background">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recyclerView_Crop_Requriment"
-        tools:listitem="@layout/croprequridmentinfalter"/>
+        android:background="?attr/colorSurface"
+        android:orientation="vertical"
+        tools:context=".Crop_Suggestion.Crop_Suggestion">
 
+        <!-- HEADER BANNER -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="@drawable/bg_header_gradient" />
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_header_gradient"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-bold"
+                android:text="Crop Water &amp; Health"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif"
+                android:text="Smart irrigation &amp; soil moisture requirements"
+                android:textColor="#D8F3DC"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- RECYCLER VIEW -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_Crop_Requriment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="24dp"
+            tools:listitem="@layout/croprequridmentinfalter" />
+
+    </LinearLayout>
 </layout>

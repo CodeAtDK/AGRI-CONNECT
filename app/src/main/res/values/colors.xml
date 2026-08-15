@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Base colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blue">#0019FF</color>
+    
+    <!-- Primary Theme Colors (Modern Agriculture Palette) -->
+    <color name="seed">#2E7D32</color>
+    <color name="md_theme_light_primary">#1B5E20</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#D8F3DC</color>
+    <color name="md_theme_light_onPrimaryContainer">#002105</color>
+    
+    <color name="md_theme_light_secondary">#388E3C</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_secondaryContainer">#E8F5E9</color>
+    <color name="md_theme_light_onSecondaryContainer">#0B2F10</color>
+    
+    <color name="md_theme_light_tertiary">#E67E22</color>
+    <color name="md_theme_light_onTertiary">#FFFFFF</color>
+    <color name="md_theme_light_tertiaryContainer">#FFE8D6</color>
+    <color name="md_theme_light_onTertiaryContainer">#3D1E00</color>
+
+    <color name="md_theme_light_error">#BA1A1A</color>
+    <color name="md_theme_light_errorContainer">#FFDAD6</color>
+    <color name="md_theme_light_onError">#FFFFFF</color>
+    <color name="md_theme_light_onErrorContainer">#410002</color>
+
+    <color name="md_theme_light_background">#F8FAF7</color>
+    <color name="md_theme_light_onBackground">#191C19</color>
+    <color name="md_theme_light_surface">#FFFFFF</color>
+    <color name="md_theme_light_onSurface">#191C19</color>
+    <color name="md_theme_light_surfaceVariant">#EFF3ED</color>
+    <color name="md_theme_light_onSurfaceVariant">#414941</color>
+    <color name="md_theme_light_outline">#D2D8CF</color>
+    <color name="md_theme_light_outlineVariant">#E2E8E0</color>
+    
+    <!-- Accent & Status Colors -->
+    <color name="agri_green_dark">#0F3811</color>
+    <color name="agri_green_primary">#1B5E20</color>
+    <color name="agri_green_light">#2E7D32</color>
+    <color name="agri_green_accent">#4CAF50</color>
+    <color name="agri_mint">#E8F5E9</color>
+    <color name="agri_mint_dark">#C8E6C9</color>
+    <color name="agri_gold">#F9A825</color>
+    <color name="agri_gold_light">#FFF9C4</color>
+    <color name="agri_gold_dark">#E65100</color>
+    <color name="agri_sky_blue">#0288D1</color>
+    <color name="agri_sky_light">#E1F5FE</color>
+    <color name="agri_card_stroke">#1A1B5E20</color>
+    <color name="agri_card_stroke_light">#15000000</color>
+    <color name="agri_text_primary">#1A1C19</color>
+    <color name="agri_text_secondary">#5C635B</color>
+    <color name="agri_text_muted">#8A9389</color>
+    
+    <!-- Dark Theme Colors -->
+    <color name="md_theme_dark_primary">#78DC77</color>
+    <color name="md_theme_dark_onPrimary">#00390A</color>
+    <color name="md_theme_dark_primaryContainer">#005313</color>
+    <color name="md_theme_dark_onPrimaryContainer">#94F990</color>
+    
+    <color name="md_theme_dark_secondary">#B9CCB3</color>
+    <color name="md_theme_dark_onSecondary">#253423</color>
+    <color name="md_theme_dark_secondaryContainer">#3B4B38</color>
+    <color name="md_theme_dark_onSecondaryContainer">#D5E8CE</color>
+
+    <color name="md_theme_dark_background">#121412</color>
+    <color name="md_theme_dark_onBackground">#E2E3DD</color>
+    <color name="md_theme_dark_surface">#1A1C19</color>
+    <color name="md_theme_dark_onSurface">#E2E3DD</color>
+    <color name="md_theme_dark_surfaceVariant">#242923</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C2C9BF</color>
 </resources>

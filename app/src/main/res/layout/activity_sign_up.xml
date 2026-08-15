@@ -1,148 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Basic.SignUp"
-    android:background="@drawable/blur_background">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SignUp"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
-
-    <EditText
-        android:id="@+id/sign_up_First_Name"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/roundcorners"
-        android:hint="Name"
-        android:paddingLeft="9dp"
-        android:paddingTop="3dp"
-        android:paddingBottom="3dp"
-        android:textColorHint="#090909"
-        app:layout_constraintBottom_toTopOf="@+id/sign_up_Last_Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="?attr/colorSurface">
 
-    <EditText
-        android:id="@+id/sign_up_Last_Name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/roundcorners"
-        android:hint="Surname"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:paddingLeft="9dp"
-        android:paddingTop="3dp"
-        android:paddingBottom="3dp"
-        android:textColorHint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/sign_up_email_id"
-        tools:layout_editor_absoluteX="8dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="36dp"
+            tools:context=".Basic.SignUp">
 
-    <EditText
-        android:id="@+id/sign_up_email_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:paddingTop="3dp"
-        android:paddingBottom="3dp"
-        android:paddingLeft="9dp"
-        android:hint=" Email Id"
-        android:background="@drawable/roundcorners"
-        android:textColorHint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/sign_up_Phone_No"
-        tools:layout_editor_absoluteX="0dp" />
+            <!-- HEADER BANNER -->
+            <View
+                android:id="@+id/signUpHeader"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/bg_header_gradient"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/sign_up_Phone_No"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:paddingTop="3dp"
-        android:paddingBottom="3dp"
-        android:paddingLeft="9dp"
-        android:hint=" Phone No."
-        android:background="@drawable/roundcorners"
-        android:textColorHint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/Sign_Up_password"
-        tools:layout_editor_absoluteX="0dp" />
+            <!-- LOGO BADGE -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSignUpLogo"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginTop="32dp"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="6dp"
+                app:strokeColor="@color/agri_mint"
+                app:strokeWidth="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/Sign_Up_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:paddingLeft="9dp"
-        android:hint=" Password"
-        android:password="true"
-        android:background="@drawable/roundcorners"
-        android:textColorHint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/sign_up_renter_password"
-        tools:layout_editor_absoluteX="16dp" />
+                <ImageView
+                    android:id="@+id/imageViewLogo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/applogo11"
+                    app:tint="@color/agri_green_primary" />
+            </com.google.android.material.card.MaterialCardView>
 
-    <EditText
-        android:id="@+id/sign_up_renter_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="140dp"
-        android:background="@drawable/roundcorners"
-        android:hint="Confirm Password"
-        android:paddingLeft="9dp"
-        android:paddingTop="3dp"
-        android:paddingBottom="3dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:password="true"
-        android:textColorHint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="8dp" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-bold"
+                android:text="Join AgriConnect"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardSignUpLogo" />
 
-    <ImageView
-        android:layout_width="417dp"
-        android:layout_height="147dp"
-        android:background="@drawable/applogo11"
-        android:backgroundTint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-3dp" />
+            <TextView
+                android:id="@+id/textSignUpSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="sans-serif"
+                android:text="Create your verified farmer account"
+                android:textColor="#D8F3DC"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <Button
-        android:id="@+id/Sign_Id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
+            <!-- REGISTRATION FORM CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSignUpForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/agri_card_stroke_light"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/signUpHeader">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Personal Details"
+                        android:textColor="@color/agri_text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
+                    <!-- NAME ROW (2 COLUMNS) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputFirstName"
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="6dp"
+                            android:hint="First Name"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeColor="@color/agri_green_primary"
+                            app:startIconDrawable="@drawable/ic_person_outline"
+                            app:startIconTint="@color/agri_green_primary">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/sign_up_First_Name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:inputType="textPersonName"
+                                android:maxLines="1"
+                                android:textColor="@color/agri_text_primary" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLastName"
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="6dp"
+                            android:hint="Last Name"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeColor="@color/agri_green_primary">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/sign_up_Last_Name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:inputType="textPersonName"
+                                android:maxLines="1"
+                                android:textColor="@color/agri_text_primary" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputEmail"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="Email Address"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/agri_green_primary"
+                        app:startIconDrawable="@drawable/ic_email_round"
+                        app:startIconTint="@color/agri_green_primary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/sign_up_email_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:textColor="@color/agri_text_primary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputPhone"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="Phone Number"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/agri_green_primary"
+                        app:startIconDrawable="@drawable/ic_phone_round"
+                        app:startIconTint="@color/agri_green_primary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/sign_up_Phone_No"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="phone"
+                            android:maxLines="1"
+                            android:textColor="@color/agri_text_primary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputPassword"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="Create Password"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/agri_green_primary"
+                        app:passwordToggleEnabled="true"
+                        app:startIconDrawable="@drawable/ic_lock_outline"
+                        app:startIconTint="@color/agri_green_primary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/Sign_Up_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:textColor="@color/agri_text_primary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputConfirmPassword"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="Confirm Password"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/agri_green_primary"
+                        app:passwordToggleEnabled="true"
+                        app:startIconDrawable="@drawable/ic_lock_outline"
+                        app:startIconTint="@color/agri_green_primary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/sign_up_renter_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:textColor="@color/agri_text_primary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/Sign_Id"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="24dp"
+                        android:backgroundTint="@color/agri_green_primary"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Create Account"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:cornerRadius="14dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- FOOTER HINT -->
+            <TextView
+                android:id="@+id/textTerms"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="By registering, you agree to AgriConnect Terms of Service and Privacy Policy"
+                android:textColor="@color/agri_text_muted"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardSignUpForm" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

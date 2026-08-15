@@ -1,109 +1,249 @@
-<layout>
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="?attr/colorSurface"
         android:fillViewport="true">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="40dp"
+            tools:context=".GovernmentSchemes.GovernmentSchemeDiscripition.Government_Scheme_Discription">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp"
-        android:id="@+id/Government_Scheme_Discription_Name"
-        android:paddingRight="5dp"
-        android:text="Scheme Name"
-        android:textAlignment="center"
-        android:textSize="25dp"
-        android:textStyle="bold" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Details"
-            android:paddingTop="30dp"
-            android:textAlignment="center"
-            android:textSize="17dp"
-            android:textStyle="bold"/>
+            <!-- HEADER BANNER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_header_gradient" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:id="@+id/Government_Scheme_Discription_Discription"
-        android:paddingRight="5dp"
-        android:text="Scheme Discription"
-        android:textAlignment="center"
-        android:textSize="15dp" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Benfits"
-            android:paddingTop="30dp"
-            android:textAlignment="center"
-            android:textSize="17dp"
-            android:textStyle="bold"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:text="Scheme Benefits"
-        android:textAlignment="center"
-        android:id="@+id/Government_Scheme_Benefits"
-        android:textSize="15dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_header_gradient"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="24dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Eligibility"
-            android:textAlignment="center"
-            android:paddingTop="30dp"
-            android:textSize="17dp"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scheme Eligibility"
-            android:id="@+id/Govenment_Scheme_Eligibility"
-            android:textAlignment="center"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Documents Required"
-            android:textAlignment="center"
-            android:textSize="17dp"
-            android:paddingTop="30dp"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Documents Required"
-            android:id="@+id/Government_Scheme_Documents_Required"
-            android:textAlignment="center"/>
+                <TextView
+                    android:id="@+id/Government_Scheme_Discription_Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Scheme Name"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Apply Now"
-            android:id="@+id/Government_Scheme_Apply_Now_Button"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="link"
-            android:id="@+id/link"
-            android:visibility="invisible"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_chip_pill"
+                    android:backgroundTint="#33FFFFFF"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp"
+                    android:text="Official Government Initiative"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="16dp">
 
+                <!-- SCHEME OVERVIEW CARD -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/agri_card_stroke_light"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-bold"
+                            android:text="Scheme Overview"
+                            android:textColor="@color/agri_text_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/Government_Scheme_Discription_Discription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="sans-serif"
+                            android:lineSpacingExtra="4dp"
+                            android:text="Scheme description details..."
+                            android:textColor="@color/agri_text_secondary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- SCHEME BENEFITS CARD -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="#F1F8E9"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/agri_mint_dark"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_verified_badge"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="sans-serif-bold"
+                            android:text="Key Benefits &amp; Subsidies"
+                            android:textColor="@color/agri_green_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            app:drawableTint="@color/agri_green_primary" />
+
+                        <TextView
+                            android:id="@+id/Government_Scheme_Benefits"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="sans-serif"
+                            android:lineSpacingExtra="4dp"
+                            android:text="Scheme benefits..."
+                            android:textColor="@color/agri_text_primary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ELIGIBILITY CRITERIA -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/agri_card_stroke_light"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-bold"
+                            android:text="Eligibility Criteria"
+                            android:textColor="@color/agri_text_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/Govenment_Scheme_Eligibility"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="sans-serif"
+                            android:lineSpacingExtra="4dp"
+                            android:text="Eligibility details..."
+                            android:textColor="@color/agri_text_secondary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- REQUIRED DOCUMENTS CARD -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="#FFF8E1"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#FFE082"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-bold"
+                            android:text="Required Documents"
+                            android:textColor="#E65100"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/Government_Scheme_Documents_Required"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="sans-serif"
+                            android:lineSpacingExtra="4dp"
+                            android:text="Document checklist..."
+                            android:textColor="@color/agri_text_primary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- APPLY BUTTON -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/Government_Scheme_Apply_Now_Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="@color/agri_green_primary"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Apply on Official Portal"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/ic_arrow_forward"
+                    app:iconGravity="textEnd"
+                    app:iconTint="@color/white" />
+
+                <TextView
+                    android:id="@+id/link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
     </ScrollView>
 </layout>
-
-

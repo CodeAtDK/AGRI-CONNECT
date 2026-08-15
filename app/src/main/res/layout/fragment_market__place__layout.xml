@@ -1,29 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Farmer_Market.MarketPlace.Market_Place_Layout"
-    android:background="@drawable/blur_background">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Market Type"
-        android:id="@+id/Market_Id"
-        android:visibility="invisible"/>
+        android:background="?attr/colorSurface"
+        android:orientation="vertical"
+        tools:context=".Farmer_Market.MarketPlace.Market_Place_Layout">
 
+        <!-- HEADER BANNER -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="@drawable/bg_header_gradient" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerView_Farmer_Product"
-        android:paddingTop="30dp"
-        tools:listitem="@layout/market_palce_layout"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_header_gradient"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="24dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-bold"
+                android:text="Product Catalog"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-</FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif"
+                android:text="Verified agricultural products with subsidy discounts"
+                android:textColor="#D8F3DC"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/Market_Id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <!-- RECYCLER VIEW -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_Farmer_Product"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="24dp"
+            tools:listitem="@layout/market_palce_layout" />
+
+    </LinearLayout>
 </layout>

@@ -5,39 +5,43 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Farmer_Main.FarmerMainActivity"
     android:fitsSystemWindows="true"
+    tools:context=".Farmer_Main.FarmerMainActivity"
     tools:openDrawer="start">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:id="@+id/toolbar"
-            android:elevation="4dp"
-            android:background="#0CCEE7"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        android:layout_height="match_parent">
 
+        <!-- FRAGMENT CONTAINER -->
         <FrameLayout
+            android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fragment_container"/>
-    </LinearLayout>
+            android:layout_height="match_parent" />
 
+        <!-- FLOATING TRANSPARENT APP BAR FOR HAMBURGER MENU -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </FrameLayout>
+
+    <!-- NAVIGATION DRAWER -->
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/nav_view"
         android:layout_gravity="start"
+        android:background="?attr/colorSurface"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_menu"
-        app:itemIconTint="#0C9AE7"
-        app:itemTextColor="#0CCEE7"/>
-
-
+        app:itemIconTint="@color/agri_green_primary"
+        app:itemShapeAppearance="@style/ShapeAppearance.AGRICONNECT.NavigationView.Item"
+        app:itemTextColor="@color/agri_text_primary"
+        app:menu="@menu/nav_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

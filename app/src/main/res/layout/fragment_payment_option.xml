@@ -1,62 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Buying_Process.payment_option"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select the payment method"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:textAlignment="center"
-        android:layout_marginTop="20dp"/>
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="?attr/colorSurface">
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp">
-
-        <RadioButton
-            android:id="@+id/radioButton1"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cash On Delivery" />
+            android:orientation="vertical"
+            android:paddingBottom="36dp"
+            tools:context=".Buying_Process.payment_option">
 
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:enabled="true"
-            android:text="UPI"/>
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="Card"/>
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="NetBanking"
-            android:enabled="false"/>
+            <!-- HEADER BANNER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_header_gradient" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_header_gradient"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="24dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_chip_pill"
+                    android:backgroundTint="#33FFFFFF"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="STEP 2 OF 2"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-bold"
+                    android:text="Payment Method"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-    </RadioGroup>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Choose how you'd like to pay for your order"
+                    android:textColor="#D8F3DC"
+                    android:textSize="13sp" />
+            </LinearLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Confirem Your Order"
-        android:id="@+id/buttontocnfirmyourorder"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingTop="20dp">
 
-</LinearLayout>
+                <!-- PAYMENT SELECTION CARD -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="@color/agri_card_stroke_light"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-bold"
+                            android:text="Select Payment Option"
+                            android:textColor="@color/agri_text_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/radioGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp">
+
+                            <!-- CASH ON DELIVERY -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                app:cardBackgroundColor="#F8FAF7"
+                                app:cardCornerRadius="16dp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/agri_card_stroke_light"
+                                app:strokeWidth="1dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="14dp">
+
+                                    <ImageView
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:src="@drawable/ic_delivery_truck"
+                                        app:tint="@color/agri_green_primary" />
+
+                                    <RadioButton
+                                        android:id="@+id/radioButton1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:buttonTint="@color/agri_green_primary"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Cash on Delivery (Pay at Doorstep)"
+                                        android:textColor="@color/agri_text_primary"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <!-- UPI INSTANT PAY -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                app:cardBackgroundColor="#F8FAF7"
+                                app:cardCornerRadius="16dp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/agri_card_stroke_light"
+                                app:strokeWidth="1dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="14dp">
+
+                                    <ImageView
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:src="@drawable/ic_upi_payment"
+                                        app:tint="@color/agri_green_primary" />
+
+                                    <RadioButton
+                                        android:id="@+id/radioButton2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:buttonTint="@color/agri_green_primary"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Instant UPI (GPay / PhonePe / Paytm)"
+                                        android:textColor="@color/agri_text_primary"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <!-- CARD PAYMENT -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                app:cardBackgroundColor="#F8FAF7"
+                                app:cardCornerRadius="16dp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/agri_card_stroke_light"
+                                app:strokeWidth="1dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="14dp">
+
+                                    <ImageView
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:src="@drawable/ic_card_payment"
+                                        app:tint="@color/agri_text_muted" />
+
+                                    <RadioButton
+                                        android:id="@+id/radioButton3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:buttonTint="@color/agri_green_primary"
+                                        android:enabled="false"
+                                        android:fontFamily="sans-serif"
+                                        android:text="Credit / Debit Card (Coming Soon)"
+                                        android:textColor="@color/agri_text_muted"
+                                        android:textSize="13sp" />
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <!-- NET BANKING -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="#F8FAF7"
+                                app:cardCornerRadius="16dp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/agri_card_stroke_light"
+                                app:strokeWidth="1dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="14dp">
+
+                                    <ImageView
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:src="@drawable/ic_shield_check"
+                                        app:tint="@color/agri_text_muted" />
+
+                                    <RadioButton
+                                        android:id="@+id/radioButton4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:buttonTint="@color/agri_green_primary"
+                                        android:enabled="false"
+                                        android:fontFamily="sans-serif"
+                                        android:text="Net Banking (Coming Soon)"
+                                        android:textColor="@color/agri_text_muted"
+                                        android:textSize="13sp" />
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- CONFIRM ORDER BUTTON -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttontocnfirmyourorder"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="@color/agri_green_primary"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Confirm &amp; Place Order"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/ic_shield_check"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
